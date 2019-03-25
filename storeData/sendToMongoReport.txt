@@ -1,0 +1,258 @@
+/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6 /Users/wadeliu/Documents/GitHub/backend/ImdbToMongodb.py
+------------------------------------
+I am sending the movieData35000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData40000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData45000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData50000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData55000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData60000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData65000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData70000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData75000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData80000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData85000.csv file
+0
+This id:tt2091423 results problem.
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData90000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData95000.csv file
+0
+1000
+2000
+This id:tt2365042 results problem.
+3000
+4000
+------------------------------------
+I am sending the movieData100000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData105000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData110000.csv file
+0
+1000
+2000
+3000
+4000
+This id:tt3110260 results problem.
+------------------------------------
+I am sending the movieData115000.csv file
+0
+1000
+2000
+3000
+4000
+This id:tt3335398 results problem.
+------------------------------------
+I am sending the movieData120000.csv file
+0
+1000
+2000
+3000
+This id:tt3517110 results problem.
+4000
+------------------------------------
+I am sending the movieData125000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData130000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData135000.csv file
+0
+1000
+This id:tt4137568 results problem.
+2000
+This id:tt4176748 results problem.
+3000
+4000
+------------------------------------
+I am sending the movieData140000.csv file
+0
+1000
+2000
+This id:tt4426108 results problem.
+3000
+4000
+------------------------------------
+I am sending the movieData145000.csv file
+0
+This id:tt4601148 results problem.
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData150000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData155000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData160000.csv file
+0
+1000
+This id:tt5497752 results problem.
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData165000.csv file
+0
+1000
+This id:tt5791288 results problem.
+2000
+This id:tt5858518 results problem.
+3000
+4000
+------------------------------------
+I am sending the movieData170000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData175000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData180000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData185000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData190000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData195000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData200000.csv file
+0
+1000
+2000
+3000
+4000
+------------------------------------
+I am sending the movieData205000.csv file
+0
+1000
+2000
+
+Process finished with exit code 0
