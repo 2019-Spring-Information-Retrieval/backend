@@ -1,7 +1,8 @@
 from typing import List, Dict
+from sklearn.feature_extraction.text import TfidfTransformer
+
 
 INDEX_IDS = ['']
-# Tfidf 应该是一个类，因为可能会需要ground fact 统计
 
 from const import LIMIT_DOCS
 tfidf = TfidfTransformer()
@@ -50,24 +51,57 @@ class RankWorker(object):
         """
         # 统计所有出现过的文档
         for idx in INDEX_IDS:
-            for wd in self.index2docs[idx].keys():  # for every query word
-                for d in oneIndex[wd].keys():  # for every doc id
+            for wd in self.word_to_ix.keys():  # for every query word
+                for d in self.index2docs[wd].keys():  # for every doc id
                     if d not in self.doc_to_ix:
                         self.doc_to_ix[len(doc_to_ix)] = d
         # 反向索引
         self.ix_to_doc = {ix: doc for doc, ix in self.doc_to_ix.items()}
 
-        # 建立每个索引下的 文档-词汇频率 矩阵
-        for idx in INDEX_IDS:
-            # 建立文档-词汇频率 矩阵
-            doc2wordfreq = np.zeros(
-                (len(self.doc_to_ix), len(self.word_to_ix)))
-            for wd, docDict in self.index2docs[idx].items():
-                for did, freq in docDict.items():
-                    x = doc_to_ix[did]
-                    y = word_to_ix[wd]
-                    doc2wordfreq[x, y] = freq
-            self.doc2vecs[idx] = doc2wordfreq
+        # 建立倒排索引下的 文档-词汇频率 矩阵
+        doc2wordfreq = np.zeros(
+            (len(self.doc_to_ix), len(self.word_to_ix)))
+        for wd, docDict in self.index2docs['freq-reverse'].items():
+            for did, freq in docDict.items():
+                x = doc_to_ix[did]
+                y = word_to_ix[wd]
+                doc2wordfreq[x, y] = freq
+        self.doc2vecs['freq-reverse'] = doc2wordfreq
+
+    def docs2position(self):
+        word_doc_post = [[[] for __ in range(
+            len(self.doc_to_ix))] for ___ in range(len(self.word_to_ix))]
+        for wd in self.word_to_ix.keys():
+            for doc in self.doc_to_ix.keys():
+                if doc in self.doc2vecs['positional'][wd]:
+                    word_doc_post[wd][doc] = list(
+                        self.doc2vecs['positional'][wd][doc])
+
+        self.doc2vecs['positional'] = word_doc_post
+
+    def alignment(self, word_doc_post):
+        # N = len(self.word_to_ix)  # word
+        # M = len(self.doc_to_ix)  # doc
+        # 先做全排序
+        for wd in self.word_to_ix.keys():
+            for doc in self.doc_to_ix.keys():
+                word_doc_post[i][j].sort()
+
+        # 算分
+        docs_score = {}
+        baseline = np.array([i + 1 for i in range(N)])
+        for doc in self.doc_to_ix.keys():
+            start = None
+            post = []
+            for wd in self.word_to_ix.keys():
+                if len(word_doc_post[wd][doc]) > 0:
+                    post.append(word_doc_post[wd][doc][0])
+                else:
+                    post.append(0)
+            post = np.array(post)
+            score = float(np.dot(baseline, post.T))
+            docs_score[doc] = score
+        return docs_score
 
     def ranking(self)->List:
         """ The core of this class!
@@ -85,7 +119,6 @@ class RankWorker(object):
         # 1. 计算得分
         # 1.1 计算频率上的得分
         if 'freq-reverse' in INDEX_IDS:
-
             tfidfmat = tfidf.fit_transform(self.doc2vecs[index])
             for ix, vec in enumerate(tfidfmat):
                 score = np.sum(vec) / np.square(vec).sum()
@@ -93,6 +126,12 @@ class RankWorker(object):
 
         # 1.2 计算不同位置上的得分？
         # ...
+
+        if 'positional' in INDEX_IDS:
+            # 对齐算分
+            docs_score = alignment(self.doc2vecs['positional'])
+            for did in self.doc_to_ix:
+                docs2score[did].append(docs_score[did])
 
         # 2. 合计总分
         scoring = []
@@ -117,8 +156,9 @@ class RankWorker(object):
             nums = LIMIT_DOC
         else:
             nums = len(docIDs)
-        docs = [self.mworker.search('doc', docIDs[i]) for i in range(nums)]
-
+        c = self.mworker.db['Movies']
+        docs = [c.find({'imdbID': docIDs[i]}) for i in range(nums)]
+        #docs = [self.mworker.search('Movies', docIDs[i]) for i in range(nums)]
         return docs
 
     def output(self)->List:
