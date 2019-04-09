@@ -1,5 +1,7 @@
 import pymongo
+import bson.json_util
 
+import pprint
 
 class DatabaseDAO:
     def __init__(self):
@@ -15,12 +17,21 @@ class DatabaseDAO:
     def getOneMovie(self, title):
         return self.cacheDb['Movies'].find_one({"Title": title})
 
-    def getMovieFromTo(self, start, end):
-        return self.cacheDb['Movies'].find().skip(start).limit(end)
+    def getManyMovies(self, query, number):
+        if self.cacheDb['Movies'].count_documents({'Title': {"$regex": '^' + query , '$options':'i'}}) < int(number):
+            return bson.json_util.dumps(self.cacheDb['Movies'].find({'Title': {"$regex": '^' + query, '$options':'i' }}))
+        return bson.json_util.dumps(self.cacheDb['Movies'].find({'Title': {"$regex": '^' + query, '$options':'i'}}).limit(int(number)))
 
+    def getMovieFromTo(self, genre, start, end):
+        return bson.json_util.dumps(self.cacheDb['Movies'].find({'Genre': {"$regex": ".*" + genre + ".*"}}).skip(int(start)).limit(int(end)))
+
+    def countAll(self, genre):
+        return self.cacheDb['Movies'].count_documents({'Genre': {"$regex": ".*" + genre + ".*"}})
 
 dao = DatabaseDAO()
-count = 0
-# dao.connectToDatabase()
+
+dao.connectToDatabase()
 # print(dao.getOneMovie("Albela"))
-# print(dao.getMovieFromTo(1,20))
+# print(dao.getMovieFromTo(1,5))
+# print(dao.getMovieFromTo("Drama",1,5))
+

@@ -1,10 +1,9 @@
 import json
 
-from DatabaseDAO import DatabaseDAO, dao, count
+
+from DatabaseDAO import DatabaseDAO, dao
 from JSONEncoder import JSONEncoder
 
-# dao = DatabaseDAO()
-# count = 0
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
@@ -39,16 +38,19 @@ def lambda_handler(event, context):
     # context["callbackWaitsForEmptyEventLoop"] = "false"
 
     global dao
-    global count
+    # global count
 
     parameters = event["queryStringParameters"]
-    count = count + 1
     dao.connectToDatabase()
+    count = -1
 
     if (parameters["type"] == "find_one"):
         movie = dao.getOneMovie(parameters["title"])
     elif (parameters["type"] == "find_from_to"):
-        movie = dao.getMovieFromTo(parameters["start"], parameters["end"])
+        movie = dao.getMovieFromTo(parameters["genre"], parameters["start"], parameters["end"])
+        count = dao.countAll(parameters["genre"])
+    elif (parameters["type"] == "find_many"):
+        movie = dao.getManyMovies(parameters["query"], parameters["number"])
 
     # movie = getMovie().get()
     movie = JSONEncoder().encode(movie)
@@ -61,9 +63,9 @@ def lambda_handler(event, context):
                     "Access-Control-Allow-Credentials": "true"
                     },
         "body": json.dumps({
-            "message": "hello world",
+            # "message": "hello world",
             "movie": movie,
-            "event": parameters["type"],
+            # "event": parameters["type"],
             "count": count
             # "location": ip.text.replace("\n", "")
         }),
