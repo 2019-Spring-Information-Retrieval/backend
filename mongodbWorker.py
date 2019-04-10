@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import List
 from pymongo import MongoClient
 
 '''
@@ -6,7 +6,10 @@ words_coltion = db.words = db['words']
 zones_coltion = db.zones
 position_coltion = db.position
 '''
-LOCAL_URL = 'mongodb://localhost:27017/'
+
+LOCAL_URL = "mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net"
+
+COLLECTIONS = {'freq-reverse': 'Movies'}
 
 
 class MongodbWorker(object):
@@ -16,7 +19,7 @@ class MongodbWorker(object):
         from mongodbWorker import MongodbWorker
         mworker = MongodbWorker()
         resultDict = mworker.search_index('word', ['lady','bird'])
-        
+
         # insert
         result = mworker.insert('word',[{'key':'lady','doc1':3,'doc2':10},{'key':'bird','doc1':1,'doc3':100}]) 
         if result is False:
@@ -26,13 +29,13 @@ class MongodbWorker(object):
     """
 
     def __init__(self, url=LOCAL_URL):
-        self.db = MongoClient(url).qa_database
+        self.db = MongoClient(url).Movies
 
-    def _getCollection(self, coltion):
+    def _getCollection(self, collection):
         """
         """
         # if the assgined collection exists or not
-        if collection not in collections.keys():
+        if collection not in COLLECTIONS.keys():
             print('name of collection is wrong!')
             return False
         else:
@@ -71,7 +74,7 @@ class MongodbWorker(object):
             this insert support inserting data under every situation
         """
         # get collection
-        c = self._getCollection(coltion)
+        c = self._getCollection(collection)
         if c is False:
             return False
 
