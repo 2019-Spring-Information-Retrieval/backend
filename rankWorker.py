@@ -6,7 +6,7 @@ from collections import defaultdict
 from functools import reduce
 from scipy.special import softmax
 
-INDEX_IDS = ['freq-reverse', 'positional']
+INDEX_IDS = [] #['freq-reverse', 'positional']
 
 tfidf = TfidfTransformer()
 
@@ -38,7 +38,6 @@ class RankWorker(object):
         self.index2docs = index2docs
         self.qwords = qwords
         self.word_to_ix = {w: ix for ix, w in enumerate(self.qwords)}
-
     def precheck(self)->bool:
         """
             whether the index2docs is larger than 0
@@ -65,8 +64,6 @@ class RankWorker(object):
         # 建立倒排索引下的 文档-词汇频率 矩阵
         doc2wordfreq = [[0] * len(self.word_to_ix)
                         for _ in range(len(self.doc_to_ix))]
-        # doc2wordfreq = np.zeros(
-        #    (len(self.doc_to_ix), len(self.word_to_ix)))
         for wd, docDict in self.index2docs['freq-reverse'].items():
             for did, freq in docDict.items():
                 x = self.doc_to_ix[did]
@@ -177,10 +174,8 @@ class RankWorker(object):
             return docs
         # 排序
         docIDs = self.ranking()
-        # print(docIDs)
         # 获得对应文档
         docs = self.getDocs(docIDs)
-        print(docs)
         return docs
 
 
@@ -191,10 +186,11 @@ def testcase():
     index2docs = {}
     # index2docs['freq-reverse'] = {'man': {'tt1046173': 1, 'tt0119654': 1, 'tt0209475': 3, 'tt0172495': 1, 'tt1272878': 2, 'tt0100405': 1, 'tt0457939': 1, 'tt0056923': 1, 'tt0133093': 2, 'tt1371111': 1, 'tt0258463': 5, 'tt0250797': 4, 'tt0421715': 1, 'tt1261945': 1, 'tt1045658': 1, 'tt0167404': 2, 'tt2024544': 3, 'tt0947798': 1, 'tt0268978': 1, 'tt0119643': 7, 'tt0118564': 3, 'tt0256415': 1, 'tt1877832': 1, 'tt0376994': 1, 'tt1205489': 2, 'tt2194499': 1, 'tt1401152': 1, 'tt0314331': 1, 'tt0127536': 1, 'tt0163025': 1, 'tt0365907': 5, 'tt0083866': 1, 'tt1229822': 1, 'tt0120611': 2, 'tt0120586': 2, 'tt0114814': 3, 'tt0082198': 1, 'tt0316654': 20, 'tt0276751': 1, 'tt0144084': 1, 'tt2923316': 1, 'tt0307987': 1, 'tt0409847': 2, 'tt1013753': 3, 'tt0319061': 1, 'tt1454468': 1, 'tt0993846': 1, 'tt0113497': 2, 'tt0257360': 1, 'tt0109830': 1, 'tt1800241': 2, 'tt1093908': 2, 'tt0372237': 1, 'tt1385826': 1, 'tt1798709': 1, 'tt0083987': 2, 'tt0455824': 1, 'tt0454921': 1, 'tt1178663': 1, 'tt1399103': 1, 'tt0106918': 1, 'tt1790885': 4, 'tt0476964': 1, 'tt0113161': 1, 'tt0349903': 1,
     #                                      'tt0120735': 1, 'tt0478311': 1, 'tt0324554': 3, 'tt1605783': 2, 'tt0412019': 5, 'tt1726592': 4, 'tt0425210': 3, 'tt0068646': 1, 'tt2614684': 2, 'tt0120689': 1, 'tt1068680': 2, 'tt1139328': 2, 'tt0108185': 11, 'tt1228705': 4, 'tt0397078': 1, 'tt1343092': 2, 'tt1570728': 3, 'tt1276104': 2, 'tt0103064': 1, 'tt0218967': 1, 'tt2267998': 2, 'tt0163187': 1, 'tt0104036': 1, 'tt0493464': 5, 'tt1174732': 2, 'tt0480025': 2, 'tt0087892': 1, 'tt0137523': 1, 'tt0343818': 1, 'tt0036775': 4, 'tt0408306': 1, 'tt2294449': 1, 'tt0375679': 9, 'tt0383574': 1, 'tt0988595': 1, 'tt3346224': 1, 'tt0145734': 2, 'tt1598822': 1, 'tt0256380': 1, 'tt0095953': 1, 'tt1229340': 1, 'tt0244353': 1, 'tt0086879': 1, 'tt0118842': 2, 'tt0780571': 2, 'tt0898367': 15, 'tt0112818': 1, 'tt0099685': 2, 'tt0240890': 2, 'tt0388795': 1, 'tt0118715': 2, 'tt0091867': 2, 'tt0109831': 1, 'tt0221027': 1, 'tt1375666': 1, 'tt1535970': 2, 'tt0889583': 3, 'tt1058017': 4, 'tt1001508': 1, 'tt0385752': 1, 'tt0317198': 1, 'tt0120815': 2, 'tt0166924': 8, 'tt0240772': 2, 'tt0452625': 2, 'tt0075314': 2}, 'whale': {'tt0120684': 26}}
-
+    # INDEX_IDS.append('freq-reverse')
     index2docs['positional'] = {'tattoo': {'tt0120586': [377], 'tt1568346': [177], 'tt2294449': [287, 326]}, 'girl': {'tt0281358': [78], 'tt0167404': [333], 'tt0119396': [300], 'tt0119488': [410], 'tt0256415': [660], 'tt1659337': [329], 'tt0242653': [46], 'tt0127536': [326], 'tt0108052': [199], 'tt0365907': [847, 907], 'tt0083866': [225], 'tt0082198': [334, 439], 'tt1114677': [727], 'tt0397535': [11, 66], 'tt1000774': [47], 'tt0866439': [89, 662], 'tt0097165': [273], 'tt0295297': [
         321, 422, 511], 'tt0246772': [313, 449], 'tt0478311': [793], 'tt0335119': [6], 'tt0467406': [305], 'tt0112697': [8, 237], 'tt0107614': [724], 'tt0108399': [48], 'tt0486822': [187], 'tt0118971': [487], 'tt0480025': [75], 'tt0343818': [41], 'tt0375679': [1174], 'tt1598822': [653], 'tt0305711': [444, 504, 508, 535, 541, 602, 647, 723], 'tt2278388': [6, 1295], 'tt0089218': [164], 'tt1535970': [131], 'tt0125439': [84], 'tt0322259': [83], 'tt0452625': [24, 607]}}
-    qwords = list(index2docs.keys())
+    INDEX_IDS.append('positional')
+    qwords = ['tattoo','girl']
 
     return qwords, index2docs
 
