@@ -45,25 +45,11 @@ class QueryWorker(object):
             using inverted file index of each word
         """
         return Search().search_inverted(words)
-        #result = do(words)
-        '''
-        words2docs = defualtdict(list)
-        for wd in words:
-            words2docs[wd] = self.mworker.search_index('word', wd)
-        
-        return words2docs
-        '''
+
     def positionIndex(self, words: List[str])->Dict:
         """
             using inverted zone index of each word
         """
-        '''
-        zone2docs = defualtdict(list)
-        for wd in words:
-            zone2docs[wd] = self.mworker.search_index('zone', wd)
-
-        return zone2docs
-        '''
         return PSearch().search_position(words)
 
     def output(self, text:str)->Dict:
@@ -76,3 +62,11 @@ class QueryWorker(object):
         index2docs['positional'] = self.positionIndex(words)
         
         return words, index2docs
+
+def main():
+    query = 'this is a test case'
+    words, index2docs = QueryWorker().output(query)
+    
+if __name__ == '__main__':
+    main()
+

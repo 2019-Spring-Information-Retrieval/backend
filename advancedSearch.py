@@ -3,7 +3,7 @@ import mongodbWorker
 import rankWorker
 
 
-def advancedSearch(query:str):
+def advancedSearch(query: str):
     q = queryWorker.QueryWorker()
     words, index2docs = q.output(query)
     m = mongodbWorker.MongodbWorker()
