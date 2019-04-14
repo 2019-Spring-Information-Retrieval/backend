@@ -1,6 +1,6 @@
 import pickle
 import re
-from pattern.vector import stem
+from pattern.vector import stem,PORTER
 
 class Index(object):
 
