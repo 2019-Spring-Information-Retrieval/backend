@@ -26,7 +26,7 @@ class PSearch():
 
 def main(args):
     index = PSearch()
-    query = ["man"]
+    query = ["this",'is','a','test','case']
     results = index.search_position(query)
 
     print(results)

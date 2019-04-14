@@ -1,6 +1,8 @@
 import pickle
 import re
-from pattern.vector import stem,PORTER
+#from pattern.vector import stem,PORTER
+from PorterStemmer import PorterStemmer
+
 
 class Index(object):
 
@@ -41,7 +43,8 @@ class Index(object):
         return tokens
 
     def stemming(self, tokens):
-        return [stem(token, stemmer=PORTER) for token in tokens]
+        p = PorterStemmer()
+        return [p.stem(token, 0, len(token) - 1) for token in tokens]
 
     def search(self, query):
         result = []
