@@ -32,7 +32,7 @@ class Index(object):
                             self._inverted_index[term][index] = 1
 
         #         self._documents = list(map(lambda x: x.split("/")[1], self._documents))
-        print(self._inverted_index)
+        # print(self._inverted_index)
         return num_files_indexed
 
     def tokenize(self, text):
