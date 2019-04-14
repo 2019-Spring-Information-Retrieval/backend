@@ -1,9 +1,11 @@
 import pickle
 import re
-import PorterStemmer
+#import PorterStemmer
+from nltk.stem.porter import PorterStemmer
 
 
 class Index(object):
+
     def __init__(self):
         self._inverted_index = {}
 
@@ -41,11 +43,8 @@ class Index(object):
         return tokens
 
     def stemming(self, tokens):
-        stemmed_tokens = []
-        ps = PorterStemmer.PorterStemmer()
-        for token in tokens:
-            stemmed_tokens.append(ps.stem(token, 0, len(token) - 1))
-        return stemmed_tokens
+        stemmer = PorterStemmer()
+        return [stemmer.stem(token) for token in tokens]
 
     def search(self, query):
         result = []
@@ -67,12 +66,9 @@ def main(args):
     index = Index()
     data = index.index_dir('movie_to_story.pickle')
     print(index._inverted_index)
-    query = ["man","whale"]
+    query = ["man", "whale"]
     results = index.search(query)
     print(results)
-
-
-
 
 
 if __name__ == "__main__":
