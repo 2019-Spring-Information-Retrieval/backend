@@ -36,7 +36,8 @@ def apigw_event():
         },
         # "queryStringParameters": {"type": "find_one", "title": "Albela"},
         # "queryStringParameters": {"type": "find_from_to", "genre": "Action", "start": 1, "end": 5},
-        "queryStringParameters": {"type": "find_many", "query": "the", "number": 5},
+        # "queryStringParameters": {"type": "find_many", "query": "the", "number": 5},
+        "queryStringParameters": {"type": "advanced", "text": "asdasd"},
         "headers": {
             "Via": "1.1 08f323deadbeefa7af34d5feb414ce27.cloudfront.net (CloudFront)",
             "Accept-Language": "en-US,en;q=0.8",

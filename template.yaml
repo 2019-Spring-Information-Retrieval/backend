@@ -23,6 +23,18 @@ Resources:
           Properties:
             Path: /retrieveMovies
             Method: get
+#  AdvancedSearchFunction:
+#    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+#    Properties:
+#      CodeUri: controller/advancedSearch/
+#      Handler: app.lambda_handler
+#      Runtime: python3.6
+#      Events:
+#        RetrieveMovies:
+#          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+#          Properties:
+#            Path: /advancedSearch
+#            Method: post
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
