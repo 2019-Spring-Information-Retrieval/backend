@@ -1,1 +1,1 @@
-LIMIT_DOCS = None
+LIMIT_DOCS = 5
