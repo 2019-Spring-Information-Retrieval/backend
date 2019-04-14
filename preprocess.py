@@ -1,6 +1,7 @@
 from typing import List
 from nltk import word_tokenize
 from textblob import Word
+from textblob import TextBlob
 import re
 
 puncts = [',', '.', '"', ':', ')', '(', '-', '!', '?', '|', ';', "'", '$', '&', '/', '[', ']', '>', '%', '=', '#', '*', '+', '\\', '•',  '~', '@', '£',
@@ -68,7 +69,7 @@ class Processor(object):
         if self.misspell:
             text = replace_typical_misspell(text)
 
-        result = word_tokenize(text.lower())
+        result = TextBlob(text.lower()).words
 
         if self.lemmatize:
             result = [Word(s).lemmatize() for s in result]

@@ -66,7 +66,7 @@ class QueryWorker(object):
 def main():
     query = 'this is a test case'
     words, index2docs = QueryWorker().output(query)
-    
+    print(words)
 if __name__ == '__main__':
     main()
 
