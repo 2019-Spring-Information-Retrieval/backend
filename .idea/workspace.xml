@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63d6724f-51fb-44cb-86d2-1d956c816f5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advancedSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/advancedSearch.py" afterDir="false" />
-    </list>
+    <list default="true" id="63d6724f-51fb-44cb-86d2-1d956c816f5a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -372,7 +369,7 @@
       <workItem from="1555099920909" duration="252000" />
       <workItem from="1555164035398" duration="364000" />
       <workItem from="1555251791047" duration="6143000" />
-      <workItem from="1555268981246" duration="1667000" />
+      <workItem from="1555268981246" duration="1682000" />
     </task>
     <servers />
   </component>
@@ -409,7 +406,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86135000" />
+    <option name="totallyTimeSpent" value="86150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="39" width="1265" height="877" extended-state="0" />
@@ -468,7 +465,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backend$advancedSearch.coverage" NAME="advancedSearch Coverage Results" MODIFIED="1555270248889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backend$advancedSearch.coverage" NAME="advancedSearch Coverage Results" MODIFIED="1555271173861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$DBConnection.coverage" NAME="DBConnection Coverage Results" MODIFIED="1555269593968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
     <SUITE FILE_PATH="coverage/backend$DatabaseDAO.coverage" NAME="DatabaseDAO Coverage Results" MODIFIED="1554430205332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
     <SUITE FILE_PATH="coverage/backend$pytest_in_test_handler_py.coverage" NAME="pytest in test_handler.py Coverage Results" MODIFIED="1555266674353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/tests/unit" />
