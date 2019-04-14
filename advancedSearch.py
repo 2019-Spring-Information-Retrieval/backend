@@ -11,3 +11,5 @@ def advancedSearch(query: str):
     r.input(words, index2docs)
     docs = r.output()
     return docs
+
+print(advancedSearch("we "))
