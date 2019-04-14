@@ -1,7 +1,6 @@
 from typing import List
-#from nltk import word_tokenize
-from textblob import Word
-from textblob import TextBlob
+#from textblob import Word
+#from textblob import TextBlob
 import re
 
 puncts = [',', '.', '"', ':', ')', '(', '-', '!', '?', '|', ';', "'", '$', '&', '/', '[', ']', '>', '%', '=', '#', '*', '+', '\\', '•',  '~', '@', '£',
@@ -61,20 +60,20 @@ class Processor(object):
         """
             return the word list
         """
-        result = []
+        #result = []
 
-        if self.punct:
-            text = replace_punct(text)
+        #if self.punct:
+        #    text = replace_punct(text)
 
-        if self.misspell:
-            text = replace_typical_misspell(text)
+        #if self.misspell:
+        #    text = replace_typical_misspell(text)
+        return text.lower().split()
+        #result = TextBlob(text.lower()).words
 
-        result = TextBlob(text.lower()).words
+        #if self.lemmatize:
+        #    result = [Word(s).lemmatize() for s in result]
 
-        if self.lemmatize:
-            result = [Word(s).lemmatize() for s in result]
-
-        return result
+        #return result
 
 
 def test():
