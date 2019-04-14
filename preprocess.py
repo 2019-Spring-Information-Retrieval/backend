@@ -1,6 +1,7 @@
 from typing import List
 from nltk import word_tokenize
 from textblob import Word
+import re
 
 puncts = [',', '.', '"', ':', ')', '(', '-', '!', '?', '|', ';', "'", '$', '&', '/', '[', ']', '>', '%', '=', '#', '*', '+', '\\', '•',  '~', '@', '£',
           '·', '_', '{', '}', '©', '^', '®', '`',  '<', '→', '°', '€', '™', '›',  '♥', '←', '×', '§', '″', '′', 'Â', '█', '½', 'à', '…',
@@ -61,15 +62,24 @@ class Processor(object):
         """
         result = []
 
-        if punct:
+        if self.punct:
             text = replace_punct(text)
 
-        if misspell:
+        if self.misspell:
             text = replace_typical_misspell(text)
 
         result = word_tokenize(text.lower())
 
-        if lemmatize:
+        if self.lemmatize:
             result = [Word(s).lemmatize() for s in result]
 
         return result
+
+
+def test():
+    query = 'This is a test case'
+    result = Processor().do(query)
+    print(result)
+
+if __name__ == '__main__':
+    test()

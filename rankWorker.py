@@ -202,9 +202,17 @@ def main():
     # init mongodb conneciton
     from mongodbWorker import MongodbWorker
     mworker = MongodbWorker()
+    '''
     rworker = RankWorker(mworker)
+    qwords = class1(sent)
+    index2docs['wei'] = class2()
+    index2docs['freq'] = class3()
+    '''
     # get input
     qwords, index2docs = testcase()
+    
+
+
     # input into the worker
     rworker.input(qwords, index2docs)
     # get the docs detail of related movie

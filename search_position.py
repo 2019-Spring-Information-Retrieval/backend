@@ -1,7 +1,7 @@
 import pymongo
 
 
-class Search():
+class PSearch():
     #def __init__(self):
     #    super().__init__()
 
@@ -25,7 +25,7 @@ class Search():
 
 
 def main(args):
-    index = Search()
+    index = PSearch()
     query = ["man"]
     results = index.search_position(query)
 
