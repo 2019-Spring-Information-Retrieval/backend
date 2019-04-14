@@ -1,8 +1,6 @@
 import pickle
 import re
-#import PorterStemmer
-from nltk.stem.porter import PorterStemmer
-
+from pattern.vector import stem,PORTER
 
 class Index(object):
 
@@ -43,8 +41,7 @@ class Index(object):
         return tokens
 
     def stemming(self, tokens):
-        stemmer = PorterStemmer()
-        return [stemmer.stem(token) for token in tokens]
+        return [stem(token, stemmer=PORTER) for token in tokens]
 
     def search(self, query):
         result = []
