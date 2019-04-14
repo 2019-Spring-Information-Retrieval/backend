@@ -1,5 +1,5 @@
 from typing import List
-from nltk import word_tokenize
+#from nltk import word_tokenize
 from textblob import Word
 from textblob import TextBlob
 import re
