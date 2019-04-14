@@ -8,6 +8,6 @@ def advancedSearch(query:str):
 	words, index2docs = q.output(query)
 	m = mongodbWorker()
 	r = rankWorker.RankWorker(m)
-	r.input(qwords, index2docs)
+	r.input(words, index2docs)
     docs = r.output()
     return docs
