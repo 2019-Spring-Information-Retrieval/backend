@@ -26,10 +26,10 @@ class PSearch():
 
 def main(args):
     index = PSearch()
-    query = ["this",'is','a','test','case']
+    query = ["man","girl"]#["this",'is','a','test','case']
     results = index.search_position(query)
 
-    print(results)
+    print(results["girl"])
     # for x in results:
     #     print(x)
 
