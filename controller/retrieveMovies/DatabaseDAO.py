@@ -31,14 +31,16 @@ class DatabaseDAO:
         return self.cacheDb['Movies'].count_documents({'Genre': {"$regex": ".*" + genre + ".*"}})
 
     def convert(self):
-        self.cacheDb['Movies'].find_one()
+        self.cacheDb['Movies'].update_one({
+            'Title': "Albela"
+            }, {"$set": {"imdbRating": "3.6"}}, { "upsert": "false" })
 
 dao = DatabaseDAO()
 
 dao.connectToDatabase()
 
 
-
+dao.convert()
 # print(dao.getOneMovie("Albela"))
 # print(dao.getMovieFromTo(1,5))
 # print(dao.getMovieFromTo("Drama",1,5))

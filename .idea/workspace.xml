@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/advancedSearch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="266">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -105,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="148" />
     <option name="y" value="23" />
     <option name="width" value="1991" />
@@ -287,7 +287,7 @@
       <workItem from="1555268981246" duration="4275000" />
       <workItem from="1555284298691" duration="9411000" />
       <workItem from="1555296501431" duration="6925000" />
-      <workItem from="1555335784549" duration="11204000" />
+      <workItem from="1555335784549" duration="11952000" />
     </task>
     <servers />
   </component>
@@ -324,7 +324,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116283000" />
+    <option name="totallyTimeSpent" value="117031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="148" y="23" width="1991" height="880" extended-state="1" />
@@ -387,7 +387,7 @@
     <SUITE FILE_PATH="coverage/backend$search_inverted.coverage" NAME="search_inverted Coverage Results" MODIFIED="1555293152368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$inverted_index.coverage" NAME="inverted_index Coverage Results" MODIFIED="1555273116214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$pytest_in_test_handler_2_py.coverage" NAME="pytest in test_handler_2.py Coverage Results" MODIFIED="1555340283587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/tests/unit" />
-    <SUITE FILE_PATH="coverage/backend$advancedSearch.coverage" NAME="advancedSearch Coverage Results" MODIFIED="1555360427512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backend$advancedSearch.coverage" NAME="advancedSearch Coverage Results" MODIFIED="1555361707008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$DBConnection.coverage" NAME="DBConnection Coverage Results" MODIFIED="1555269593968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
     <SUITE FILE_PATH="coverage/backend$DatabaseDAO__1_.coverage" NAME="DatabaseDAO (1) Coverage Results" MODIFIED="1555297476016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
     <SUITE FILE_PATH="coverage/backend$DatabaseDAO.coverage" NAME="DatabaseDAO Coverage Results" MODIFIED="1555297498207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/advancedSearch" />
@@ -702,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/advancedSearch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="266">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
