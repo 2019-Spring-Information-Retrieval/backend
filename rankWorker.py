@@ -4,7 +4,8 @@ from const import LIMIT_DOCS
 import numpy as np
 from collections import defaultdict
 from functools import reduce
-from scipy.special import softmax
+#from scipy.special import softmax
+from pymongo import MongoClient
 
 INDEX_IDS = ['freq-reverse', 'positional']
 
@@ -36,8 +37,8 @@ class RankWorker(object):
 
         '''
         self.index2docs = index2docs
-        print('The result of freq is :')
-        print(index2docs['freq-reverse'])
+        #print('The result of freq is :')
+        #print(index2docs['freq-reverse'])
         self.qwords = qwords
         self.word_to_ix = {w: ix for ix, w in enumerate(self.qwords)}
 
@@ -183,9 +184,13 @@ class RankWorker(object):
             nums = LIMIT_DOCS
         else:
             nums = len(docIDs)
-        c = self.mworker.db['Movies']
 
-        docs = [c.find({'imdbID': docIDs[i]}) for i in range(nums)]
+        LOCAL_URL = "mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net"
+        mc = MongoClient(LOCAL_URL)
+        db = mc['IMDBData']
+        c = db['Movies']
+        #c = self.mworker.db['Movies']
+        docs = [c.find_one({'imdbID': docIDs[i]}) for i in range(nums)]
         #docs = [self.mworker.search('Movies', docIDs[i]) for i in range(nums)]
         return docs
 

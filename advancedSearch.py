@@ -10,8 +10,9 @@ def advancedSearch(query: str):
     r = rankWorker.RankWorker(m)
     r.input(words, index2docs)
     docs = r.output()
+    print(docs)
     return docs
 
-
-print(advancedSearch("old man"))
+advancedSearch("the")
+#print(advancedSearch("the"))
 

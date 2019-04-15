@@ -11,7 +11,7 @@ class Search(Index):
 
         client = pymongo.MongoClient("mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
         db = client['IMDBData']
-        collection = db['Movies']
+        collection = db['Movies_2']
 
         # print(collection.count())
         # return
