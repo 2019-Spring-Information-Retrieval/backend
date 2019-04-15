@@ -58,6 +58,7 @@ class QueryWorker(object):
         """
         index2docs = {}
         words = Processor().do(text)
+        print(words)
         index2docs['freq-reverse'] = self.wordIndex(words)
         index2docs['positional'] = self.positionIndex(words)
         return words, index2docs
