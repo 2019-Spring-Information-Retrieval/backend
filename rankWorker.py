@@ -181,10 +181,10 @@ class RankWorker(object):
         # print(ranking)
         # print(scoring)
         # 3. 根据总分排序
-        inds = np.argsort(-scoring)
+        inds = np.argsort(scoring)
         ranking = np.array(ranking)
         ranking = ranking[inds]
-        return ranking
+        return ranking[::-1]
 
     def getDocs(self, docIDs: List)->List:
         """
