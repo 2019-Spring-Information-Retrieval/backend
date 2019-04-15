@@ -23,7 +23,7 @@ def replace_punct(x):
     for p in punct_mapping:
         x = x.replace(p, punct_mapping[p])
     for punct in puncts:
-        x = x.replace(punct, f' {punct} ')
+        x = x.replace(punct, '')#f' {punct} ')
     for s in specials:
         x = x.replace(s, specials[s])
     return x
@@ -51,7 +51,7 @@ class Processor(object):
             wordList = pworker.do(query)
     """
 
-    def __init__(self, punct: bool=False, misspell: bool=False, lemmatize: bool=False):
+    def __init__(self, punct: bool=True, misspell: bool=False, lemmatize: bool=False):
         self.punct = punct
         self.misspell = misspell
         self.lemmatize = lemmatize
@@ -62,9 +62,9 @@ class Processor(object):
         """
         #result = []
 
-        #if self.punct:
-        #    text = replace_punct(text)
-
+        if self.punct:
+            text = replace_punct(text)
+        print(text)
         #if self.misspell:
         #    text = replace_typical_misspell(text)
         return text.lower().split()
@@ -77,7 +77,7 @@ class Processor(object):
 
 
 def test():
-    query = 'This is a test case'
+    query = 'man, a'
     result = Processor().do(query)
     print(result)
 
