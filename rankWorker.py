@@ -36,6 +36,8 @@ class RankWorker(object):
 
         '''
         self.index2docs = index2docs
+        print('The result of freq is :')
+        print(index2docs['freq-reverse'])
         self.qwords = qwords
         self.word_to_ix = {w: ix for ix, w in enumerate(self.qwords)}
 
@@ -73,7 +75,7 @@ class RankWorker(object):
                 y = self.word_to_ix[wd]
                 doc2wordfreq[x][y] = freq
         self.doc2vecs['freq-reverse'] = doc2wordfreq
-
+        #print(self.doc2vecs['freq-reverse'])
     def docs2position(self):
         # 出现位置初始化为-1，当真有出现的时候，会直接覆盖出现位置的list
         word_doc_post = [[[-1] for __ in range(
@@ -89,7 +91,7 @@ class RankWorker(object):
                     doc]] = self.index2docs['positional'][wd][doc]
 
         self.doc2vecs['positional'] = word_doc_post
-        print(word_doc_post)
+        #print(word_doc_post)
 
     def alignment(self, word_doc_post):
         # N = len(self.word_to_ix)  # word
@@ -97,7 +99,7 @@ class RankWorker(object):
         def comb(place1, place2, coda=' '):
             return [str(p1) + coda + str(p2) for p1 in place1 for p2 in place2]
         # 算分 这里是 直接算距离的方法
-        docs_score = {}
+        docs_score = [0] * len(self.doc_to_ix)  # {}
         baseline = np.array([i + 1 for i in range(len(self.qwords))])  # 1 by N
 
         for doc in self.doc_to_ix.keys():
@@ -107,9 +109,18 @@ class RankWorker(object):
             comb_to_plcs = np.array([list(map(int, vec.split()))
                                      for vec in vectors])  # H by N
             scores = np.dot(baseline, comb_to_plcs.T)  # 1 by H
-
-            docs_score[doc] = np.max(softmax(scores))  # 1
-        return docs_score
+            # print(scores)
+            docs_score[j] = np.max(scores)  # softmax(scores))  # 1
+        # print(docs_score)
+        mean = sum(docs_score) / len(self.doc_to_ix)
+        diff = max(docs_score) - min(docs_score)
+        # score_nor = [([j]-mean)/ for j in range(len(self.doc_to_ix))]
+        docs_to_score = {doc: (
+            docs_score[self.doc_to_ix[doc]] - mean) / diff for doc in self.doc_to_ix.keys()}
+        
+        #print(docs_to_score)
+        #print('--------')
+        return docs_to_score
 
     def ranking(self)->List:
         """ The core of this class!
@@ -129,7 +140,7 @@ class RankWorker(object):
         if 'freq-reverse' in INDEX_IDS:
             self.docs2feature()
             tfidfmat = tfidf.fit_transform(self.doc2vecs['freq-reverse'])
-            #print(tfidfmat)
+            # print(tfidfmat)
             for ix, vec in enumerate(tfidfmat.toarray()):
                 if np.square(vec).sum() != 0:
                     score = np.sum(vec) / np.square(vec).sum()
@@ -146,13 +157,16 @@ class RankWorker(object):
             docs_score = self.alignment(self.doc2vecs['positional'])
             for did in self.doc_to_ix:
                 docs2score[did].append(docs_score[did])
+        # print('--------')
+        # print(docs2score)
         # 2. 合计总分
         scoring = []
         ranking = []
         for doc, scores in docs2score.items():
             ranking.append(doc)
             scoring.append(getFinalScore(scores))
-
+        # print(ranking)
+        # print(scoring)
         # 3. 根据总分排序
         inds = np.argsort(scoring)
         ranking = np.array(ranking)

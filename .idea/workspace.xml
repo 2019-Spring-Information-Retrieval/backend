@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63d6724f-51fb-44cb-86d2-1d956c816f5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advancedSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/advancedSearch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/advancedSearch/DatabaseDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/advancedSearch/DatabaseDAO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/retrieveMovies/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/retrieveMovies/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/tests/unit/test_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/tests/unit/test_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/const.py" beforeDir="false" afterPath="$PROJECT_DIR$/const.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/queryWorker.py" beforeDir="false" afterPath="$PROJECT_DIR$/queryWorker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rankWorker.py" beforeDir="false" afterPath="$PROJECT_DIR$/rankWorker.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/advancedSearch.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -279,7 +277,7 @@
       <workItem from="1555268981246" duration="4275000" />
       <workItem from="1555284298691" duration="9411000" />
       <workItem from="1555296501431" duration="6925000" />
-      <workItem from="1555335784549" duration="9880000" />
+      <workItem from="1555335784549" duration="9888000" />
     </task>
     <servers />
   </component>
@@ -316,7 +314,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114959000" />
+    <option name="totallyTimeSpent" value="114967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="501" y="23" width="1419" height="880" extended-state="0" />
@@ -695,7 +693,7 @@
     <entry file="file://$PROJECT_DIR$/advancedSearch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

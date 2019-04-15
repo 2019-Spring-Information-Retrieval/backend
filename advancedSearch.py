@@ -14,5 +14,6 @@ def advancedSearch(query: str):
     return docs
 
 
-print(bson.json_util.dumps(advancedSearch("the")))
+print(advancedSearch("old man"))
+
 
