@@ -12,8 +12,13 @@ class Search(Index):
         client = pymongo.MongoClient("mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
         db = client['IMDBData']
         collection = db['Movies_2']
+<<<<<<< HEAD
         print(collection.count())
         return
+=======
+        #print(collection.count())
+        #return
+>>>>>>> fa8180974f7c5a006d0ce09e79b49afd175841fb
         for word in query:
             tokens = self.tokenize(word)
             stems = self.stemming(tokens)
