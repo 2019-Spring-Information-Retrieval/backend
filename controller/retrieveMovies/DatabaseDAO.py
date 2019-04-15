@@ -1,7 +1,8 @@
 import pymongo
 import bson.json_util
 
-import pprint
+
+# import pprint
 
 class DatabaseDAO:
     def __init__(self):
@@ -33,7 +34,8 @@ dao = DatabaseDAO()
 dao.connectToDatabase()
 
 
-print(dao.getOneMovie("Albela"))
+
+# print(dao.getOneMovie("Albela"))
 # print(dao.getMovieFromTo(1,5))
 # print(dao.getMovieFromTo("Drama",1,5))
 
