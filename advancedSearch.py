@@ -1,6 +1,8 @@
 import queryWorker
 import mongodbWorker
 import rankWorker
+import pprint
+
 import bson.json_util
 
 
@@ -16,9 +18,9 @@ def advancedSearch(query: str):
     return docs
 
 
-advancedSearch("a spider bite a man")
+
 
 #print(advancedSearch("the"))
 
-print(advancedSearch("the"))
+pprint.pprint(advancedSearch("spider man"))
 
