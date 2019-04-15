@@ -12,4 +12,4 @@ def advancedSearch(query: str):
     docs = r.output()
     return docs
 
-advancedSearch("we")
+advancedSearch("w")

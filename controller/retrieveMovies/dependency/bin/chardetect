@@ -1,4 +1,4 @@
-#!/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6
+#!/usr/local/opt/python/bin/python3.7
 # -*- coding: utf-8 -*-
 import re
 import sys
