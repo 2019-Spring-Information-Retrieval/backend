@@ -49,8 +49,9 @@ def lambda_handler(event, context):
         count = dao.countAll(parameters["genre"])
     elif (parameters["type"] == "find_many"):
         movie = dao.getManyMovies(parameters["query"], parameters["number"])
-    elif (parameters['type'] == "advanced"):
-        movie = parameters
+    elif (parameters['type'] == "topRated"):
+        movie = dao.getTopRated(parameters["num"])
+    
 
     # movie = getMovie().get()
     movie = JSONEncoder().encode(movie)

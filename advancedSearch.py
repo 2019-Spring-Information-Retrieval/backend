@@ -1,6 +1,7 @@
 import queryWorker
 import mongodbWorker
 import rankWorker
+import bson.json_util
 
 
 def advancedSearch(query: str):
@@ -13,5 +14,5 @@ def advancedSearch(query: str):
     return docs
 
 
-print(advancedSearch("we"))
+print(bson.json_util.dumps(advancedSearch("the")))
 
