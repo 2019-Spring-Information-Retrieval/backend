@@ -18,27 +18,6 @@ class QueryWorker(object):
 
     def __init__(self, mongodbworker=None):
         pass
-        #self.mworker = mongodbworker
-        #self.query = ""
-        #self.pworker = Processor()
-    '''
-    def preprocess(self, query:str):
-        return Processor().do(query)
-
-    def input(self, query):
-        """
-            accept input
-        """
-        self.query = query
-    '''
-    '''
-    def preprocess(self)-> List[str]:
-        """
-            preprocess the query, clean, remove stopwords or not
-        """
-        words = self.query.split()
-        return words
-    '''
 
     def wordIndex(self, words: List[str])->Dict:
         """
@@ -64,7 +43,7 @@ class QueryWorker(object):
         return words, index2docs
 
 def main():
-    query = 'we'
+    query = 'the'
     words, index2docs = QueryWorker().output(query)
     #print(index2docs)
 
