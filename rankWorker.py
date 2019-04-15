@@ -6,7 +6,7 @@ from collections import defaultdict
 from functools import reduce
 from scipy.special import softmax
 
-INDEX_IDS = [] #['freq-reverse', 'positional']
+INDEX_IDS = ['freq-reverse', 'positional']
 
 tfidf = TfidfTransformer()
 
@@ -38,6 +38,7 @@ class RankWorker(object):
         self.index2docs = index2docs
         self.qwords = qwords
         self.word_to_ix = {w: ix for ix, w in enumerate(self.qwords)}
+
     def precheck(self)->bool:
         """
             whether the index2docs is larger than 0
@@ -51,6 +52,8 @@ class RankWorker(object):
         # 统计所有出现过的文档
         for idx in INDEX_IDS:
             for wd in self.word_to_ix.keys():  # for every query word
+                if wd not in self.index2docs[idx]:
+                    continue
                 for d in self.index2docs[idx][wd].keys():  # for every doc id
                     if d not in self.doc_to_ix:
                         self.doc_to_ix[d] = len(self.doc_to_ix)
@@ -78,11 +81,15 @@ class RankWorker(object):
 
         for wd in self.word_to_ix.keys():
             for doc in self.doc_to_ix.keys():
-                if doc in self.index2docs['positional'][wd]:
-                    word_doc_post[self.word_to_ix[wd]][self.doc_to_ix[
-                        doc]] = self.index2docs['positional'][wd][doc]
+                if wd not in self.index2docs['positional']:
+                    continue
+                if doc not in self.index2docs['positional'][wd]:
+                    continue
+                word_doc_post[self.word_to_ix[wd]][self.doc_to_ix[
+                    doc]] = self.index2docs['positional'][wd][doc]
 
         self.doc2vecs['positional'] = word_doc_post
+        print(word_doc_post)
 
     def alignment(self, word_doc_post):
         # N = len(self.word_to_ix)  # word
@@ -122,20 +129,23 @@ class RankWorker(object):
         if 'freq-reverse' in INDEX_IDS:
             self.docs2feature()
             tfidfmat = tfidf.fit_transform(self.doc2vecs['freq-reverse'])
+            #print(tfidfmat)
             for ix, vec in enumerate(tfidfmat.toarray()):
-                score = np.sum(vec) / np.square(vec).sum()
+                if np.square(vec).sum() != 0:
+                    score = np.sum(vec) / np.square(vec).sum()
+                else:
+                    score = 0
                 docs2score[self.ix_to_doc[ix]].append(score)
 
         # 1.2 计算不同位置上的得分？
         # ...
 
-        if 'positional' in INDEX_IDS:
+        if 'positional' in INDEX_IDS and len(self.qwords) > 1:
             # 对齐算分
             self.docs2position()
             docs_score = self.alignment(self.doc2vecs['positional'])
             for did in self.doc_to_ix:
                 docs2score[did].append(docs_score[did])
-
         # 2. 合计总分
         scoring = []
         ranking = []
@@ -160,6 +170,7 @@ class RankWorker(object):
         else:
             nums = len(docIDs)
         c = self.mworker.db['Movies']
+
         docs = [c.find({'imdbID': docIDs[i]}) for i in range(nums)]
         #docs = [self.mworker.search('Movies', docIDs[i]) for i in range(nums)]
         return docs
@@ -174,6 +185,7 @@ class RankWorker(object):
             return docs
         # 排序
         docIDs = self.ranking()
+        #print('len is {}'.format(len(docIDs)))
         # 获得对应文档
         docs = self.getDocs(docIDs)
         return docs
@@ -190,7 +202,7 @@ def testcase():
     index2docs['positional'] = {'tattoo': {'tt0120586': [377], 'tt1568346': [177], 'tt2294449': [287, 326]}, 'girl': {'tt0281358': [78], 'tt0167404': [333], 'tt0119396': [300], 'tt0119488': [410], 'tt0256415': [660], 'tt1659337': [329], 'tt0242653': [46], 'tt0127536': [326], 'tt0108052': [199], 'tt0365907': [847, 907], 'tt0083866': [225], 'tt0082198': [334, 439], 'tt1114677': [727], 'tt0397535': [11, 66], 'tt1000774': [47], 'tt0866439': [89, 662], 'tt0097165': [273], 'tt0295297': [
         321, 422, 511], 'tt0246772': [313, 449], 'tt0478311': [793], 'tt0335119': [6], 'tt0467406': [305], 'tt0112697': [8, 237], 'tt0107614': [724], 'tt0108399': [48], 'tt0486822': [187], 'tt0118971': [487], 'tt0480025': [75], 'tt0343818': [41], 'tt0375679': [1174], 'tt1598822': [653], 'tt0305711': [444, 504, 508, 535, 541, 602, 647, 723], 'tt2278388': [6, 1295], 'tt0089218': [164], 'tt1535970': [131], 'tt0125439': [84], 'tt0322259': [83], 'tt0452625': [24, 607]}}
     INDEX_IDS.append('positional')
-    qwords = ['tattoo','girl']
+    qwords = ['tattoo', 'girl']
 
     return qwords, index2docs
 
@@ -202,16 +214,9 @@ def main():
     # init mongodb conneciton
     from mongodbWorker import MongodbWorker
     mworker = MongodbWorker()
-    '''
-    rworker = RankWorker(mworker)
-    qwords = class1(sent)
-    index2docs['wei'] = class2()
-    index2docs['freq'] = class3()
-    '''
+
     # get input
     qwords, index2docs = testcase()
-    
-
 
     # input into the worker
     rworker.input(qwords, index2docs)
