@@ -1,8 +1,6 @@
 import pymongo
 import bson.json_util
-
-
-# import pprint
+import pprint
 
 class DatabaseDAO:
     def __init__(self):
@@ -26,6 +24,9 @@ class DatabaseDAO:
     def getMovieFromTo(self, genre, start, end):
         return bson.json_util.dumps(self.cacheDb['Movies'].find({'Genre': {"$regex": ".*" + genre + ".*"}}).skip(int(start)).limit(int(end)))
 
+    def getTopRated(self, num):
+        return bson.json_util.dumps(self.cacheDb['Movies'].find({"imdbRating": {"$lt": "11"}}).sort([("imdbRating", -1), ("imdbVotes", -1)]).limit(int(num)))
+
     def countAll(self, genre):
         return self.cacheDb['Movies'].count_documents({'Genre': {"$regex": ".*" + genre + ".*"}})
 
@@ -38,4 +39,5 @@ dao.connectToDatabase()
 # print(dao.getOneMovie("Albela"))
 # print(dao.getMovieFromTo(1,5))
 # print(dao.getMovieFromTo("Drama",1,5))
+pprint.pprint(dao.getTopRated(10))
 
