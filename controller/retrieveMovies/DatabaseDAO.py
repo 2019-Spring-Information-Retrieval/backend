@@ -25,10 +25,13 @@ class DatabaseDAO:
         return bson.json_util.dumps(self.cacheDb['Movies'].find({'Genre': {"$regex": ".*" + genre + ".*"}}).skip(int(start)).limit(int(end)))
 
     def getTopRated(self, num):
-        return bson.json_util.dumps(self.cacheDb['Movies'].find({"imdbRating": {"$lt": "11"}}).sort([("imdbRating", -1), ("imdbVotes", -1)]).limit(int(num)))
+        return bson.json_util.dumps(self.cacheDb['Movies'].find({"imdbRating": {"$lt": 10.0}}).sort([("imdbRating", -1), ("imdbVotes", -1)]).limit(int(num)))
 
     def countAll(self, genre):
         return self.cacheDb['Movies'].count_documents({'Genre': {"$regex": ".*" + genre + ".*"}})
+
+    def convert(self):
+        self.cacheDb['Movies'].find_one()
 
 dao = DatabaseDAO()
 
@@ -39,5 +42,6 @@ dao.connectToDatabase()
 # print(dao.getOneMovie("Albela"))
 # print(dao.getMovieFromTo(1,5))
 # print(dao.getMovieFromTo("Drama",1,5))
-pprint.pprint(dao.getTopRated(10))
+# pprint.pprint(dao.getTopRated(10))
+
 
