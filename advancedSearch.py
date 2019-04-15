@@ -13,4 +13,7 @@ def advancedSearch(query: str):
     docs = r.output()
 
     return docs
-print(advancedSearch("the"))
+
+advancedSearch("a spider bite a man")
+
+#print(advancedSearch("the"))
