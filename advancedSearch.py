@@ -14,6 +14,6 @@ def advancedSearch(query: str):
     return docs
 
 
-print(advancedSearch("old man"))
+print(advancedSearch("the"))
 
 

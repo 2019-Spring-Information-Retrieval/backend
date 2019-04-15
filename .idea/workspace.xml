@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="63d6724f-51fb-44cb-86d2-1d956c816f5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/advancedSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/advancedSearch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/const.py" beforeDir="false" afterPath="$PROJECT_DIR$/const.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queryWorker.py" beforeDir="false" afterPath="$PROJECT_DIR$/queryWorker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rankWorker.py" beforeDir="false" afterPath="$PROJECT_DIR$/rankWorker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_inverted.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_inverted.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,10 +25,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/search_inverted.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/advancedSearch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            <state relative-caret-position="285">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -82,7 +93,6 @@
         <option value="$PROJECT_DIR$/mongodbWorker.py" />
         <option value="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" />
         <option value="$PROJECT_DIR$/controller/advancedSearch/DatabaseDAO.py" />
-        <option value="$PROJECT_DIR$/search_inverted.py" />
         <option value="$PROJECT_DIR$/controller/advancedSearch/requirements.txt" />
         <option value="$PROJECT_DIR$/controller/retrieveMovies/requirements.txt" />
         <option value="$PROJECT_DIR$/controller/retrieveMovies/app.py" />
@@ -92,13 +102,14 @@
         <option value="$PROJECT_DIR$/controller/advancedSearch/app.py" />
         <option value="$PROJECT_DIR$/controller/tests/unit/test_handler.py" />
         <option value="$PROJECT_DIR$/advancedSearch.py" />
+        <option value="$PROJECT_DIR$/search_inverted.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="501" />
+    <option name="x" value="148" />
     <option name="y" value="23" />
-    <option name="width" value="1419" />
+    <option name="width" value="1991" />
     <option name="height" value="880" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -277,7 +288,7 @@
       <workItem from="1555268981246" duration="4275000" />
       <workItem from="1555284298691" duration="9411000" />
       <workItem from="1555296501431" duration="6925000" />
-      <workItem from="1555335784549" duration="9888000" />
+      <workItem from="1555335784549" duration="10473000" />
     </task>
     <servers />
   </component>
@@ -314,18 +325,18 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114967000" />
+    <option name="totallyTimeSpent" value="115552000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="501" y="23" width="1419" height="880" extended-state="0" />
+    <frame x="720" y="23" width="1419" height="880" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68339306" visible="true" weight="0.26652142" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.68339306" visible="true" weight="0.26652142" />
       <window_info id="Structure" order="1" sideWeight="0.50094515" side_tool="true" weight="0.24969475" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32914287" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6236099" visible="true" weight="0.48857868" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6236099" visible="true" weight="0.48857868" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40127388" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -377,7 +388,7 @@
     <SUITE FILE_PATH="coverage/backend$search_inverted.coverage" NAME="search_inverted Coverage Results" MODIFIED="1555293152368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$inverted_index.coverage" NAME="inverted_index Coverage Results" MODIFIED="1555273116214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$pytest_in_test_handler_2_py.coverage" NAME="pytest in test_handler_2.py Coverage Results" MODIFIED="1555340283587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/tests/unit" />
-    <SUITE FILE_PATH="coverage/backend$advancedSearch.coverage" NAME="advancedSearch Coverage Results" MODIFIED="1555358129423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backend$advancedSearch.coverage" NAME="advancedSearch Coverage Results" MODIFIED="1555360250750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$DBConnection.coverage" NAME="DBConnection Coverage Results" MODIFIED="1555269593968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
     <SUITE FILE_PATH="coverage/backend$DatabaseDAO__1_.coverage" NAME="DatabaseDAO (1) Coverage Results" MODIFIED="1555297476016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
     <SUITE FILE_PATH="coverage/backend$DatabaseDAO.coverage" NAME="DatabaseDAO Coverage Results" MODIFIED="1555297498207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/advancedSearch" />
@@ -539,16 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/search_inverted.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="11" column="96" selection-start-line="11" selection-start-column="96" selection-end-line="11" selection-end-column="96" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -692,10 +693,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/advancedSearch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search_inverted.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
