@@ -67,6 +67,7 @@ def main():
     query = 'we'
     words, index2docs = QueryWorker().output(query)
     print(index2docs)
+    
 if __name__ == '__main__':
     main()
 

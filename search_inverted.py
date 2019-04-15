@@ -1,6 +1,6 @@
 import pymongo
 from inverted_index import Index
-import bson.json_util
+#import bson.json_util
 
 class Search(Index):
     def __init__(self):
@@ -30,10 +30,10 @@ class Search(Index):
 
 def main(args):
     search = Search()
-    query = ["man","whale"]
+    query = ['we']#["man","whale"]
     results = search.search_inverted(query)
 
-    # print(results)
+    print(results)
 
 
 if __name__ == "__main__":
