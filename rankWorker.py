@@ -44,6 +44,8 @@ class RankWorker(object):
         for w in self.qwords:
             if w not in self.word_to_ix:
                 self.word_to_ix[w] = len(self.word_to_ix)
+        print(self.word_to_ix)
+        print(self.qwords)
         #{w: ix for ix, w in enumerate(self.qwords)}
         #print(self.qwords)
         #print(self.word_to_ix)
