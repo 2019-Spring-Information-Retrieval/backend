@@ -29,7 +29,7 @@ class MongodbWorker(object):
     """
 
     def __init__(self, url=LOCAL_URL):
-        self.db = MongoClient(url).Movies
+        self.db = MongoClient(url)['IMDBData'].Movies
 
     def _getCollection(self, collection):
         """

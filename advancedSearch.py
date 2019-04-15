@@ -11,9 +11,8 @@ def advancedSearch(query: str):
     r = rankWorker.RankWorker(m)
     r.input(words, index2docs)
     docs = r.output()
+
+
     return docs
-
-
-print(bson.json_util.dumps(advancedSearch("the")))
-
+print(advancedSearch("the"))
 
