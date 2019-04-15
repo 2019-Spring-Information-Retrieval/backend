@@ -1,6 +1,4 @@
 import json
-
-
 from DatabaseDAO import DatabaseDAO, dao
 from JSONEncoder import JSONEncoder
 
@@ -51,6 +49,8 @@ def lambda_handler(event, context):
         count = dao.countAll(parameters["genre"])
     elif (parameters["type"] == "find_many"):
         movie = dao.getManyMovies(parameters["query"], parameters["number"])
+    elif (parameters['type'] == "advanced"):
+        movie = parameters
 
     # movie = getMovie().get()
     movie = JSONEncoder().encode(movie)

@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from retrieveMovies import app
+from hello_world import app
 
 
 @pytest.fixture()
@@ -34,10 +34,7 @@ def apigw_event():
             },
             "stage": "prod",
         },
-        # "queryStringParameters": {"type": "find_one", "title": "Albela"},
-        # "queryStringParameters": {"type": "find_from_to", "genre": "Action", "start": 1, "end": 5},
-        # "queryStringParameters": {"type": "find_many", "query": "the", "number": 5},
-        "queryStringParameters": {"type": "advanced", "text": "asdasd"},
+        "queryStringParameters": {"foo": "bar"},
         "headers": {
             "Via": "1.1 08f323deadbeefa7af34d5feb414ce27.cloudfront.net (CloudFront)",
             "Accept-Language": "en-US,en;q=0.8",
@@ -69,8 +66,8 @@ def test_lambda_handler(apigw_event, mocker):
 
     ret = app.lambda_handler(apigw_event, "")
     data = json.loads(ret["body"])
-    print(data)
-    # assert ret["statusCode"] == 200
-    # assert "message" in ret["body"]
-    # assert data["message"] == "hello world"
+
+    assert ret["statusCode"] == 200
+    assert "message" in ret["body"]
+    assert data["message"] == "hello world"
     # assert "location" in data.dict_keys()

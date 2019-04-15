@@ -1,11 +1,12 @@
 {
-  "body": "{\"message\": \"hello world\"}",
+  "body": "{\"text\": \"hello world dasdsad\"}",
   "resource": "/{proxy+}",
   "path": "/path/to/resource",
   "httpMethod": "POST",
   "isBase64Encoded": false,
   "queryStringParameters": {
-    "foo": "bar"
+    "foo": "bar",
+    "type": "advanced"
   },
   "pathParameters": {
     "proxy": "/path/to/resource"

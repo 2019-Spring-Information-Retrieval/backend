@@ -40,14 +40,17 @@ def lambda_handler(event, context):
     global dao
     # global count
 
-    body = event["body"]
+    body = json.loads(event["body"])
+
     dao.connectToDatabase()
     count = -1
 
-    movie = body
+    try:
+        input = body["text"]
+    except:
+        input = "error"
 
-    # movie = getMovie().get()
-    movie = JSONEncoder().encode(movie)
+
 
 
 
@@ -59,7 +62,7 @@ def lambda_handler(event, context):
                     },
         "body": json.dumps({
             # "message": "hello world",
-            "movie": movie,
+            "input": input,
             # "event": parameters["type"],
             "count": count
             # "location": ip.text.replace("\n", "")

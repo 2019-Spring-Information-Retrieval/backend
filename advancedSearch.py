@@ -5,14 +5,11 @@ import rankWorker
 
 def advancedSearch(query: str):
     q = queryWorker.QueryWorker()
-
     words, index2docs = q.output(query)
-    print(words)
-    return q
-    # m = mongodbWorker.MongodbWorker()
-    # r = rankWorker.RankWorker(m)
-    # r.input(words, index2docs)
-    # docs = r.output()
-    # return docs
+    m = mongodbWorker.MongodbWorker()
+    r = rankWorker.RankWorker(m)
+    r.input(words, index2docs)
+    docs = r.output()
+    return docs
 
-advancedSearch("test case")
+advancedSearch("we")
