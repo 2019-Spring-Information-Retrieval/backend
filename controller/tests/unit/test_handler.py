@@ -2,7 +2,8 @@ import json
 
 import pytest
 
-from hello_world import app
+from retrieveMovies import app as retrieveMovies
+from advancedSearch import app as advancedSearch
 
 
 @pytest.fixture()
@@ -10,7 +11,7 @@ def apigw_event():
     """ Generates API GW Event"""
 
     return {
-        "body": '{ "test": "body"}',
+        "body": '{ "text": "w t f"}',
         "resource": "/{proxy+}",
         "requestContext": {
             "resourceId": "123456",
@@ -34,7 +35,7 @@ def apigw_event():
             },
             "stage": "prod",
         },
-        "queryStringParameters": {"foo": "bar"},
+        "queryStringParameters": {"type": "advanced"},
         "headers": {
             "Via": "1.1 08f323deadbeefa7af34d5feb414ce27.cloudfront.net (CloudFront)",
             "Accept-Language": "en-US,en;q=0.8",
@@ -64,10 +65,14 @@ def apigw_event():
 
 def test_lambda_handler(apigw_event, mocker):
 
-    ret = app.lambda_handler(apigw_event, "")
+    ret = retrieveMovies.lambda_handler(apigw_event, "")
     data = json.loads(ret["body"])
 
-    assert ret["statusCode"] == 200
-    assert "message" in ret["body"]
-    assert data["message"] == "hello world"
+    ret = advancedSearch.lambda_handler(apigw_event, "")
+    data2 = json.loads(ret["body"])
+    print(data)
+    print(data2)
+    # assert ret["statusCode"] == 200
+    # assert "message" in ret["body"]
+    # assert data["message"] == "hello world"
     # assert "location" in data.dict_keys()
