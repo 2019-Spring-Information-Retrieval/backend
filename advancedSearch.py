@@ -14,5 +14,11 @@ def advancedSearch(query: str):
 
 
     return docs
-print(advancedSearch("a spider bite a man"))
+
+
+advancedSearch("a spider bite a man")
+
+#print(advancedSearch("the"))
+
+print(advancedSearch("the"))
 
