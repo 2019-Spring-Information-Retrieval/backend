@@ -60,11 +60,10 @@ class QueryWorker(object):
         words = Processor().do(text)
         index2docs['freq-reverse'] = self.wordIndex(words)
         index2docs['positional'] = self.positionIndex(words)
-        
         return words, index2docs
 
 def main():
-    query = 'this is a test case'
+    query = 'we'
     words, index2docs = QueryWorker().output(query)
     print(index2docs)
 if __name__ == '__main__':
