@@ -1,5 +1,6 @@
 import pymongo
 from inverted_index import Index
+import bson.json_util
 
 class Search(Index):
     def __init__(self):
@@ -8,10 +9,11 @@ class Search(Index):
     def search_inverted(self,query):
         results = {}
 
-        client = pymongo.MongoClient("mongodb://jack:jackmongodb@cluster0-shard-00-00-uagde.mongodb.net:27017,cluster0-shard-00-01-uagde.mongodb.net:27017,cluster0-shard-00-02-uagde.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true")
+        client = pymongo.MongoClient("mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
         db = client['IMDBData']
         collection = db['Movies_2']
-
+        print(collection.count())
+        return
         for word in query:
             tokens = self.tokenize(word)
             stems = self.stemming(tokens)
@@ -29,7 +31,7 @@ def main(args):
     query = ["man","whale"]
     results = search.search_inverted(query)
 
-    print(results)
+    # print(results)
 
 
 if __name__ == "__main__":

@@ -33,7 +33,7 @@ dao = DatabaseDAO()
 dao.connectToDatabase()
 
 
-# print(dao.getOneMovie("Albela"))
+print(dao.getOneMovie("Albela"))
 # print(dao.getMovieFromTo(1,5))
 # print(dao.getMovieFromTo("Drama",1,5))
 
