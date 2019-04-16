@@ -44,9 +44,9 @@ def lambda_handler(event, context):
 
     dao.connectToDatabase()
     count = -1
-    movies = {}
-    output=""
-    print(body["text"])
+    movies = []
+    output = ""
+  
     try:
         input = body["text"]
         movies = search(input)

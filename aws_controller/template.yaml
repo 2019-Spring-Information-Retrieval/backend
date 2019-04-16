@@ -8,7 +8,7 @@ Description: >
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
-    Timeout: 100
+    Timeout: 15
 
 Resources:
   RetrieveMoviesFunction:
@@ -23,17 +23,29 @@ Resources:
           Properties:
             Path: /retrieveMovies
             Method: get
-  AdvancedSearchFunction:
+#  PostTestFunction:
+#    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+#    Properties:
+#      CodeUri: postTest/
+#      Handler: app.lambda_handler
+#      Runtime: python3.7
+#      Events:
+#        HelloWorld:
+#          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+#          Properties:
+#            Path: /postTest
+#            Method: post
+  AdvancedFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       CodeUri: advancedSearch/
       Handler: app.lambda_handler
       Runtime: python3.7
       Events:
-        RetrieveMovies:
+        Advanced:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /advancedSearch
+            Path: /advanced
             Method: post
 
 Outputs:

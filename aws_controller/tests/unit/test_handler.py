@@ -65,7 +65,6 @@ def apigw_event():
 
 
 def test_lambda_handler(apigw_event, mocker):
-
     # ret = retrieveMovies.lambda_handler(apigw_event, "")
     # data = json.loads(ret["body"])
     # pprint.pprint(data)
