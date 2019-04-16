@@ -38,22 +38,30 @@ class RankWorker(object):
         '''
         self.index2docs = index2docs
         #print('The result of freq is :')
-        #print(index2docs['freq-reverse'])
+        # print(index2docs)
         self.qwords = qwords
         self.word_to_ix = {}
         for w in self.qwords:
             if w not in self.word_to_ix:
                 self.word_to_ix[w] = len(self.word_to_ix)
-        print(self.word_to_ix)
-        print(self.qwords)
+        # print(self.word_to_ix)
+        # print(self.qwords)
         #{w: ix for ix, w in enumerate(self.qwords)}
-        #print(self.qwords)
-        #print(self.word_to_ix)
+        # print(self.qwords)
+        # print(self.word_to_ix)
+
     def precheck(self)->bool:
         """
             whether the index2docs is larger than 0
         """
-        return len(self.index2docs) > 0
+        flag = True
+        if len(self.index2docs) <= 0:
+            flag = False
+        if len(self.qwords) == 0:
+            flag = False
+        if max([len(self.index2docs[idx]) for idx in INDEX_IDS]) == 0:
+            flag = False
+        return flag  # len(self.index2docs) > 0
 
     def docs2index(self):
         """
@@ -76,21 +84,29 @@ class RankWorker(object):
         # 建立倒排索引下的 文档-词汇频率 矩阵
         doc2wordfreq = [[0] * len(self.word_to_ix)
                         for _ in range(len(self.doc_to_ix))]
-        #print('--------')
-        #print(self.word_to_ix)
-        #print(self.doc_to_ix)
-        #print(len(self.word_to_ix))
-        #print(len(self.doc_to_ix))
-        #print()
+        # print('--------')
+        # print(self.word_to_ix)
+        # print(self.doc_to_ix)
+        # print(len(self.word_to_ix))
+        # print(len(self.doc_to_ix))
+        # print()
         for wd, docDict in self.index2docs['freq-reverse'].items():
             for did, freq in docDict.items():
-
                 x = self.doc_to_ix[did]
                 y = self.word_to_ix[wd]
-                #print(x,y)
+                # print(x,y)
                 doc2wordfreq[x][y] = freq
         self.doc2vecs['freq-reverse'] = doc2wordfreq
         #print(self.doc2vecs['freq-reverse'])
+
+    def freqRanking(self):
+        freqs = [0 for _ in range(len(self.doc_to_ix))]
+        for ix, vals in enumerate(self.doc2vecs['freq-reverse']):
+            freqs[ix] = sum(vals) / len(vals)
+        mean = sum(freqs) / len(freqs)
+        diff = max(freqs) - min(freqs)
+        return [(f - mean) / diff for f in freqs]
+
     def docs2position(self):
         # 出现位置初始化为-1，当真有出现的时候，会直接覆盖出现位置的list
         word_doc_post = [[[-1] for __ in range(
@@ -106,7 +122,7 @@ class RankWorker(object):
                     doc]] = self.index2docs['positional'][wd][doc]
 
         self.doc2vecs['positional'] = word_doc_post
-        #print(word_doc_post)
+        # print(word_doc_post)
 
     def alignment(self, word_doc_post):
         # N = len(self.word_to_ix)  # word
@@ -119,7 +135,8 @@ class RankWorker(object):
 
         for doc in self.doc_to_ix.keys():
             j = self.doc_to_ix[doc]
-            places = [word_doc_post[self.word_to_ix[w]][j] for w in self.qwords]
+            places = [word_doc_post[self.word_to_ix[w]][j]
+                      for w in self.qwords]
             vectors = reduce(comb, places)  # length = H
             comb_to_plcs = np.array([list(map(int, vec.split()))
                                      for vec in vectors])  # H by N
@@ -132,9 +149,9 @@ class RankWorker(object):
         # score_nor = [([j]-mean)/ for j in range(len(self.doc_to_ix))]
         docs_to_score = {doc: (
             docs_score[self.doc_to_ix[doc]] - mean) / diff for doc in self.doc_to_ix.keys()}
-        
-        #print(docs_to_score)
-        #print('--------')
+
+        # print(docs_to_score)
+        # print('--------')
         return docs_to_score
 
     def ranking(self)->List:
@@ -152,7 +169,7 @@ class RankWorker(object):
 
         # 1. 计算得分
         # 1.1 计算频率上的得分
-        if 'freq-reverse' in INDEX_IDS:
+        if 'freq-reverse' in INDEX_IDS and len(self.qwords) > 1:
             self.docs2feature()
             tfidfmat = tfidf.fit_transform(self.doc2vecs['freq-reverse'])
             # print(tfidfmat)
@@ -163,8 +180,13 @@ class RankWorker(object):
                     score = 0
                 docs2score[self.ix_to_doc[ix]].append(score)
 
-        # 1.2 计算不同位置上的得分？
-        # ...
+        if 'freq-reverse' in INDEX_IDS and len(self.qwords) == 1:
+            self.docs2feature()
+            scores = self.freqRanking()
+            for ix, s in enumerate(scores):
+                docs2score[self.ix_to_doc[ix]].append(s)
+            # 1.2 计算不同位置上的得分？
+            # ...
 
         if 'positional' in INDEX_IDS and len(self.qwords) > 1:
             # 对齐算分
