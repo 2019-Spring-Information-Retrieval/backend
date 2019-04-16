@@ -20,27 +20,27 @@ class QueryWorker(object):
     def __init__(self, mongodbworker=None):
         pass
 
-    def wordIndex(self, words: List[str])->Dict:
+    def wordIndex(self, dao, words: List[str])->Dict:
         """
             using inverted file index of each word
         """
-        return Search().search_inverted(words)
+        return Search().search_inverted(words, dao)
 
-    def positionIndex(self, words: List[str])->Dict:
+    def positionIndex(self, words: List[str], dao)->Dict:
         """
             using inverted zone index of each word
         """
-        return PSearch().search_position(words)
+        return PSearch().search_position(words, dao)
 
-    def output(self, text:str)->Dict:
+    def output(self, dao, text:str)->Dict:
         """
             return the doc ids for querying
         """
         index2docs = {}
         words = Processor().do(text)
         #print(words)
-        index2docs['freq-reverse'] = self.wordIndex(words)
-        index2docs['positional'] = self.positionIndex(words)
+        index2docs['freq-reverse'] = self.wordIndex(dao, words)
+        index2docs['positional'] = self.positionIndex(words, dao)
         return words, index2docs
 
 def main():

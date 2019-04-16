@@ -1,9 +1,9 @@
 import json
 
-from search import search
 from DatabaseDAO import DatabaseDAO, dao
 from JSONEncoder import JSONEncoder
 
+count = -1
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
@@ -35,21 +35,21 @@ def lambda_handler(event, context):
 
     #     raise e
 
-    # context["callbackWaitsForEmptyEventLoop"] = "false"
 
+    # Globasl conn
     global dao
     # global count
+    global count
 
+    count = count + 1
     body = json.loads(event["body"])
-
     dao.connectToDatabase()
-    count = -1
     movies = []
     output = ""
   
     try:
         input = body["text"]
-        movies = search(input)
+        movies = dao.advancedSearch(input)
     except:
         output = "error"
 

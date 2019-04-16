@@ -23,7 +23,7 @@ class RankWorker(object):
     """docstring for RankWorker
     """
 
-    def __init__(self):
+    def __init__(self, dao):
         #self.mworker = mongodbworker
         self.index2docs = {}  # indextype : {word:{docid:freq}}
         self.doc2vecs = {}  # indextype : {doc: feature matrix}
@@ -32,6 +32,7 @@ class RankWorker(object):
         self.doc_to_ix = {}
         self.word_to_ix = {}
         self.qwords = []
+        self.dao = dao
 
     def input(self, qwords: List, index2docs: Dict):
         '''
@@ -195,9 +196,12 @@ class RankWorker(object):
         else:
             nums = len(docIDs)
 
-        LOCAL_URL = "mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net"
-        mc = MongoClient(LOCAL_URL)
-        db = mc['IMDBData']
+        # LOCAL_URL = "mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net"
+        # mc = MongoClient(LOCAL_URL)
+        # db = mc['IMDBData']
+
+        self.dao.connectToDatabase()
+        db = self.dao.cacheDb
         c = db['Movies']
         docs = []
         for i in range(nums):

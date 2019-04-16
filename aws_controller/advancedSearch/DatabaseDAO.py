@@ -1,6 +1,7 @@
+import queryWorker
+import rankWorker
 import pymongo
 import bson.json_util
-
 import pprint
 
 class DatabaseDAO:
@@ -14,11 +15,19 @@ class DatabaseDAO:
         self.cacheDb = client['IMDBData']
         return self.cacheDb
 
+    def advancedSearch(self, query: str):
+        q = queryWorker.QueryWorker()
+        words, index2docs = q.output(dao, query)
+        r = rankWorker.RankWorker(dao)
+        r.input(words, index2docs)
+        docs = r.output()
+
+        return docs
+
+
 dao = DatabaseDAO()
 
-dao.connectToDatabase()
-
-
+# dao.connectToDatabase()
 # print(dao.getOneMovie("Albela"))
 # print(dao.getMovieFromTo(1,5))
 # print(dao.getMovieFromTo("Drama",1,5))

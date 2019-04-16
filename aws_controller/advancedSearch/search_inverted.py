@@ -1,17 +1,18 @@
 import pymongo
 from inverted_index import Index
 
-
 class Search(Index):
 
     def __init__(self):
         super().__init__()
 
-    def search_inverted(self, query):
+    def search_inverted(self, query, dao):
         results = {}
-        client = pymongo.MongoClient(
-            "mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
-        db = client['IMDBData']
+        # client = pymongo.MongoClient(
+        #     "mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
+        # db = client['IMDBData']
+        dao.connectToDatabase()
+        db = dao.cacheDb
         collection = db['Movies_2']
 
         for word in query:

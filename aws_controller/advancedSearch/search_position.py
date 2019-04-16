@@ -1,14 +1,15 @@
 import pymongo
 
-
 class PSearch():
 
-    def search_position(self, query):
+    def search_position(self, query, dao):
         results = {}
 
-        client = pymongo.MongoClient(
-            "mongodb://jack:jackmongodb@cluster0-shard-00-00-uagde.mongodb.net:27017,cluster0-shard-00-01-uagde.mongodb.net:27017,cluster0-shard-00-02-uagde.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true")
-        db = client['IMDBData']
+        # client = pymongo.MongoClient(
+        #     "mongodb://jack:jackmongodb@cluster0-shard-00-00-uagde.mongodb.net:27017,cluster0-shard-00-01-uagde.mongodb.net:27017,cluster0-shard-00-02-uagde.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true")
+        # db = client['IMDBData']
+        dao.connectToDatabase()
+        db = dao.cacheDb
         collection = db['Movies_1']
         for word in query:
             query = {word: {"$exists": True}}
