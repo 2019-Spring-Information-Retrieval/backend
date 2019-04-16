@@ -1,18 +1,17 @@
 import json
+import pprint
 
 import pytest
 
-from retrieveMovies import app as retrieveMovies
 from advancedSearch import app as advancedSearch
 
-import pprint
 
 @pytest.fixture()
 def apigw_event():
     """ Generates API GW Event"""
 
     return {
-        "body": '{ "text": "w t f"}',
+        "body": '{ "text": "spider man"}',
         "resource": "/{proxy+}",
         "requestContext": {
             "resourceId": "123456",
@@ -36,7 +35,7 @@ def apigw_event():
             },
             "stage": "prod",
         },
-        "queryStringParameters": {"type": "topRated", "num": 10},
+        "queryStringParameters": {"type": "topRated", "num": 10, "minVote": 500},
         "headers": {
             "Via": "1.1 08f323deadbeefa7af34d5feb414ce27.cloudfront.net (CloudFront)",
             "Accept-Language": "en-US,en;q=0.8",
@@ -66,13 +65,13 @@ def apigw_event():
 
 def test_lambda_handler(apigw_event, mocker):
 
-    ret = retrieveMovies.lambda_handler(apigw_event, "")
-    data = json.loads(ret["body"])
-    pprint.pprint(data)
+    # ret = retrieveMovies.lambda_handler(apigw_event, "")
+    # data = json.loads(ret["body"])
+    # pprint.pprint(data)
 
-    # ret = advancedSearch.lambda_handler(apigw_event, "")
-    # data2 = json.loads(ret["body"])
-
+    ret = advancedSearch.lambda_handler(apigw_event, "")
+    data2 = json.loads(ret["body"])
+    pprint.pprint(data2)
 
     # print(data2)
 

@@ -1,8 +1,7 @@
 import json
 
-
-from DatabaseDAO import DatabaseDAO, dao
 from JSONEncoder import JSONEncoder
+from search import search
 
 
 def lambda_handler(event, context):
@@ -44,12 +43,16 @@ def lambda_handler(event, context):
 
     dao.connectToDatabase()
     count = -1
-
+    movies = {}
+    output=""
+    print(body["text"])
     try:
         input = body["text"]
+        movies = search(input)
     except:
-        input = "error"
+        output = "error"
 
+    movies = JSONEncoder().encode(movies)
 
 
 
@@ -63,6 +66,8 @@ def lambda_handler(event, context):
         "body": json.dumps({
             # "message": "hello world",
             "input": input,
+            "movies": movies,
+            "output": output,
             # "event": parameters["type"],
             "count": count
             # "location": ip.text.replace("\n", "")

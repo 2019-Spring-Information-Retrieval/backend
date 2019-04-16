@@ -1,0 +1,6 @@
+typing==3.6.6
+pymongo==3.7.2
+numpy==1.16.2
+scikit_learn==0.20.3
+dnspython
+requests
