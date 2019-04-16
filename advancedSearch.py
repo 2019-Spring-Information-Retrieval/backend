@@ -22,5 +22,5 @@ def advancedSearch(query: str):
 
 #print(advancedSearch("the"))
 
-pprint.pprint(advancedSearch("man, a"))
+pprint.pprint(advancedSearch("spiderman"))
 

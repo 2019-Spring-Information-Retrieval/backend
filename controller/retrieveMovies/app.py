@@ -42,6 +42,7 @@ def lambda_handler(event, context):
     dao.connectToDatabase()
     count = -1
 
+
     if (parameters["type"] == "find_one"):
         movie = dao.getOneMovie(parameters["title"])
     elif (parameters["type"] == "find_from_to"):
@@ -50,7 +51,7 @@ def lambda_handler(event, context):
     elif (parameters["type"] == "find_many"):
         movie = dao.getManyMovies(parameters["query"], parameters["number"])
     elif (parameters['type'] == "topRated"):
-        movie = dao.getTopRated(parameters["num"])
+        movie = dao.getTopRated(parameters["num"], parameters["minVote"])
     
 
     # movie = getMovie().get()

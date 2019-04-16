@@ -5,8 +5,9 @@
   "httpMethod": "POST",
   "isBase64Encoded": false,
   "queryStringParameters": {
-    "foo": "bar",
-    "type": "advanced"
+    "num": "2",
+    "type": "topRated",
+    "minVote": 1000
   },
   "pathParameters": {
     "proxy": "/path/to/resource"
