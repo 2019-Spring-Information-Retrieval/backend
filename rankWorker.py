@@ -22,8 +22,8 @@ class RankWorker(object):
     """docstring for RankWorker
     """
 
-    def __init__(self, mongodbworker=None):
-        self.mworker = mongodbworker
+    def __init__(self):
+        #self.mworker = mongodbworker
         self.index2docs = {}  # indextype : {word:{docid:freq}}
         self.doc2vecs = {}  # indextype : {doc: feature matrix}
         self.docs2score = {}
@@ -37,18 +37,11 @@ class RankWorker(object):
 
         '''
         self.index2docs = index2docs
-        #print('The result of freq is :')
-        # print(index2docs)
         self.qwords = qwords
         self.word_to_ix = {}
         for w in self.qwords:
             if w not in self.word_to_ix:
                 self.word_to_ix[w] = len(self.word_to_ix)
-        # print(self.word_to_ix)
-        # print(self.qwords)
-        #{w: ix for ix, w in enumerate(self.qwords)}
-        # print(self.qwords)
-        # print(self.word_to_ix)
 
     def precheck(self)->bool:
         """
@@ -84,20 +77,12 @@ class RankWorker(object):
         # 建立倒排索引下的 文档-词汇频率 矩阵
         doc2wordfreq = [[0] * len(self.word_to_ix)
                         for _ in range(len(self.doc_to_ix))]
-        # print('--------')
-        # print(self.word_to_ix)
-        # print(self.doc_to_ix)
-        # print(len(self.word_to_ix))
-        # print(len(self.doc_to_ix))
-        # print()
         for wd, docDict in self.index2docs['freq-reverse'].items():
             for did, freq in docDict.items():
                 x = self.doc_to_ix[did]
                 y = self.word_to_ix[wd]
-                # print(x,y)
                 doc2wordfreq[x][y] = freq
         self.doc2vecs['freq-reverse'] = doc2wordfreq
-        #print(self.doc2vecs['freq-reverse'])
 
     def freqRanking(self):
         freqs = [0 for _ in range(len(self.doc_to_ix))]
@@ -120,9 +105,7 @@ class RankWorker(object):
                     continue
                 word_doc_post[self.word_to_ix[wd]][self.doc_to_ix[
                     doc]] = self.index2docs['positional'][wd][doc]
-
         self.doc2vecs['positional'] = word_doc_post
-        # print(word_doc_post)
 
     def alignment(self, word_doc_post):
         # N = len(self.word_to_ix)  # word
@@ -141,17 +124,12 @@ class RankWorker(object):
             comb_to_plcs = np.array([list(map(int, vec.split()))
                                      for vec in vectors])  # H by N
             scores = np.dot(baseline, comb_to_plcs.T)  # 1 by H
-            # print(scores)
             docs_score[j] = np.max(scores)  # softmax(scores))  # 1
-        # print(docs_score)
         mean = sum(docs_score) / len(self.doc_to_ix)
         diff = max(docs_score) - min(docs_score)
-        # score_nor = [([j]-mean)/ for j in range(len(self.doc_to_ix))]
         docs_to_score = {doc: (
             docs_score[self.doc_to_ix[doc]] - mean) / diff for doc in self.doc_to_ix.keys()}
 
-        # print(docs_to_score)
-        # print('--------')
         return docs_to_score
 
     def ranking(self)->List:
@@ -172,7 +150,6 @@ class RankWorker(object):
         if 'freq-reverse' in INDEX_IDS and len(self.qwords) > 1:
             self.docs2feature()
             tfidfmat = tfidf.fit_transform(self.doc2vecs['freq-reverse'])
-            # print(tfidfmat)
             for ix, vec in enumerate(tfidfmat.toarray()):
                 if np.square(vec).sum() != 0:
                     score = np.sum(vec) / np.square(vec).sum()
@@ -194,16 +171,12 @@ class RankWorker(object):
             docs_score = self.alignment(self.doc2vecs['positional'])
             for did in self.doc_to_ix:
                 docs2score[did].append(docs_score[did])
-        # print('--------')
-        # print(docs2score)
         # 2. 合计总分
         scoring = []
         ranking = []
         for doc, scores in docs2score.items():
             ranking.append(doc)
             scoring.append(getFinalScore(scores))
-        # print(ranking)
-        # print(scoring)
         # 3. 根据总分排序
         inds = np.argsort(scoring)
         ranking = np.array(ranking)
@@ -225,9 +198,7 @@ class RankWorker(object):
         mc = MongoClient(LOCAL_URL)
         db = mc['IMDBData']
         c = db['Movies']
-        #c = self.mworker.db['Movies']
         docs = [c.find_one({'imdbID': docIDs[i]}) for i in range(nums)]
-        #docs = [self.mworker.search('Movies', docIDs[i]) for i in range(nums)]
         return docs
 
     def output(self)->List:
@@ -240,7 +211,6 @@ class RankWorker(object):
             return docs
         # 排序
         docIDs = self.ranking()
-        #print('len is {}'.format(len(docIDs)))
         # 获得对应文档
         docs = self.getDocs(docIDs)
         return docs
@@ -266,9 +236,6 @@ def main():
     '''
     This is test case.
     '''
-    # init mongodb conneciton
-    from mongodbWorker import MongodbWorker
-    mworker = MongodbWorker()
 
     # get input
     qwords, index2docs = testcase()
