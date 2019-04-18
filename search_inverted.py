@@ -25,7 +25,25 @@ class Search(Index):
                 results.update(i)
 
         return results
+    def search_script(self,query):
+        results = {}
 
+        client = pymongo.MongoClient(
+            "mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
+        db = client['IMDBData']
+        collection = db['Movie_3']
+
+        for word in query:
+            tokens = self.tokenize(word)
+            stems = self.stemming(tokens)
+
+            query = {stems[0]: {"$exists": True}}
+            cursor = collection.find(query,{"_id":0})
+
+            for i in cursor:
+                results.update(i)
+
+        return results
 
 def main(args):
     search = Search()
