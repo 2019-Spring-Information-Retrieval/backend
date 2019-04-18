@@ -43,7 +43,7 @@ class QueryWorker(object):
         return words, index2docs
 
 def main():
-    query = 'the'
+    query = 'the' ########
     words, index2docs = QueryWorker().output(query)
     #print(index2docs)
 
