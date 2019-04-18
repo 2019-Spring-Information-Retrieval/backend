@@ -2,17 +2,15 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/controller2" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/controller2/advancedSearch" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/aws_controller/python" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/advancedSearch" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/python" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7 (backend)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (aws_controller)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
-    <option name="projectConfiguration" value="pytest" />
-    <option name="PROJECT_TEST_RUNNER" value="pytest" />
+    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
   </component>
   <component name="deploySettings">
     <option name="samConfigs">
@@ -22,7 +20,7 @@
             <DeploySamConfig>
               <option name="autoExecute" value="true" />
               <option name="bucketName" value="movie-project" />
-              <option name="stackName" value="SayYourMovie" />
+              <option name="stackName" value="Say-Your-Movie" />
             </DeploySamConfig>
           </value>
         </entry>

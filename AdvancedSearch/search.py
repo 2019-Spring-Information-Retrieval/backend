@@ -6,7 +6,7 @@ import pprint
 import bson.json_util
 
 
-def advancedSearch(query: str):
+def search(query: str):
     q = queryWorker.QueryWorker()
     words, index2docs = q.output(query)
     #m = mongodbWorker.MongodbWorker()
@@ -18,9 +18,7 @@ def advancedSearch(query: str):
     return docs
 
 
+# print(search("the"))
 
-
-#print(advancedSearch("the"))
-
-pprint.pprint(advancedSearch("spiderman"))
+# pprint.pprint(search("the"))
 

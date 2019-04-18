@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63d6724f-51fb-44cb-86d2-1d956c816f5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advancedSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/advancedSearch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/.idea/controller.iml" beforeDir="false" afterPath="$PROJECT_DIR$/controller/.idea/controller.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/advancedSearch/DatabaseDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/advancedSearch/DatabaseDAO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/event.json" beforeDir="false" afterPath="$PROJECT_DIR$/controller/event.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/retrieveMovies/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/retrieveMovies/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/tests/unit/test_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/tests/unit/test_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_controller/retrieveMovies/DatabaseDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/aws_controller/retrieveMovies/DatabaseDAO.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,25 +23,66 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/search_inverted.py">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+            <state relative-caret-position="720">
+              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/advancedSearch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storeData/ImdbToMongodb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/advancedSearch.py">
+        <entry file="file://$PROJECT_DIR$/storeData/moviesData.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="-3112743">
+              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storeData/data.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storeData/sendToMongoReport.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storeData/splitData.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storeData/operateRawDataSet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -63,6 +97,9 @@
     </option>
   </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>typing</find>
+    </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
@@ -93,10 +130,8 @@
         <option value="$PROJECT_DIR$/storeData/ImdbToMongodb.py" />
         <option value="$PROJECT_DIR$/send.py" />
         <option value="$PROJECT_DIR$/storeData/dataByIndustry.json" />
-        <option value="$PROJECT_DIR$/queryWorker.py" />
         <option value="$PROJECT_DIR$/template.yaml" />
         <option value="$PROJECT_DIR$/mongodbWorker.py" />
-        <option value="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" />
         <option value="$PROJECT_DIR$/controller/advancedSearch/DatabaseDAO.py" />
         <option value="$PROJECT_DIR$/controller/advancedSearch/requirements.txt" />
         <option value="$PROJECT_DIR$/controller/retrieveMovies/requirements.txt" />
@@ -104,18 +139,23 @@
         <option value="$PROJECT_DIR$/event.json" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/controller/tests/unit/test_handler_2.py" />
-        <option value="$PROJECT_DIR$/controller/advancedSearch/app.py" />
         <option value="$PROJECT_DIR$/controller/tests/unit/test_handler.py" />
         <option value="$PROJECT_DIR$/search_inverted.py" />
+        <option value="$PROJECT_DIR$/queryWorker.py" />
+        <option value="$PROJECT_DIR$/controller/advancedSearch/advancedSearch.py" />
+        <option value="$PROJECT_DIR$/rankWorker.py" />
+        <option value="$PROJECT_DIR$/controller/advancedSearch/rankWorker.py" />
+        <option value="$PROJECT_DIR$/controller/advancedSearch/app.py" />
         <option value="$PROJECT_DIR$/advancedSearch.py" />
+        <option value="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="318" />
-    <option name="y" value="23" />
-    <option name="width" value="1594" />
-    <option name="height" value="880" />
+    <option name="x" value="308" />
+    <option name="y" value="51" />
+    <option name="width" value="1249" />
+    <option name="height" value="861" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -125,7 +165,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,34 +172,40 @@
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="storeData" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/controller/tests/unit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AdvancedSearch" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/controller/tests/unit" />
-      <recent name="$PROJECT_DIR$/controller" />
-      <recent name="$PROJECT_DIR$/controller/advancedSearch" />
-      <recent name="$PROJECT_DIR$/storeData" />
-      <recent name="$PROJECT_DIR$/controller/retrieveMovies" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/controller/advancedSearch" />
       <recent name="$PROJECT_DIR$/controller" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/controller/retrieveMovies" />
       <recent name="$PROJECT_DIR$/controller/" />
-      <recent name="$PROJECT_DIR$/controller/getMovies/hello_world" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/AdvancedSearch" />
+      <recent name="$PROJECT_DIR$/controller/advancedSearch" />
+      <recent name="$PROJECT_DIR$/controller/tests/unit" />
+      <recent name="$PROJECT_DIR$/controller" />
+      <recent name="$PROJECT_DIR$/storeData" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -175,7 +220,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.advancedSearch">
+  <component name="RunManager" selected="Python.DatabaseDAO">
+    <configuration name="DatabaseDAO" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/controller/retrieveMovies" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="advancedSearch" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,7 +256,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/advancedSearch.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/controller/advancedSearch/advancedSearch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -256,10 +323,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.DatabaseDAO" />
         <item itemvalue="Python.advancedSearch" />
         <item itemvalue="Python tests.pytest in test_handler.py" />
         <item itemvalue="Python tests.pytest for test_handler.test_lambda_handler" />
-        <item itemvalue="AWS Lambda.[Local] app.lambda_handler" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +360,15 @@
       <workItem from="1555268981246" duration="4275000" />
       <workItem from="1555284298691" duration="9411000" />
       <workItem from="1555296501431" duration="6925000" />
-      <workItem from="1555335784549" duration="15258000" />
+      <workItem from="1555335784549" duration="19692000" />
+      <workItem from="1555386330212" duration="1338000" />
+      <workItem from="1555391844173" duration="6000" />
+      <workItem from="1555397290082" duration="963000" />
+      <workItem from="1555424124566" duration="75000" />
+      <workItem from="1555428390002" duration="598000" />
+      <workItem from="1555429567244" duration="32000" />
+      <workItem from="1555429611238" duration="1800000" />
+      <workItem from="1555464373978" duration="1268000" />
     </task>
     <servers />
   </component>
@@ -330,17 +405,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120337000" />
+    <option name="totallyTimeSpent" value="130851000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="318" y="23" width="1594" height="880" extended-state="0" />
+    <frame x="308" y="51" width="1249" height="861" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68339306" visible="true" weight="0.23646908" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.68339306" visible="true" weight="0.33057165" />
       <window_info id="Structure" order="1" sideWeight="0.50094515" side_tool="true" weight="0.24969475" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32914287" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6236099" weight="0.6040609" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6236099" weight="0.3065134" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40101522" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -349,7 +424,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49785408" weight="0.32855436" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.37639007" side_tool="true" weight="0.48857868" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6315789" visible="true" weight="0.3464467" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6315789" weight="0.27029702" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.53159606" weight="0.22715735" />
       <window_info anchor="bottom" id="AWS.CloudFormation" order="13" sideWeight="0.58920187" weight="0.20304568" />
       <window_info anchor="bottom" id="aws.explorer" order="14" sideWeight="0.36793184" side_tool="true" weight="0.3464467" />
@@ -392,67 +467,110 @@
     <SUITE FILE_PATH="coverage/backend$search_inverted.coverage" NAME="search_inverted Coverage Results" MODIFIED="1555293152368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$inverted_index.coverage" NAME="inverted_index Coverage Results" MODIFIED="1555273116214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$pytest_in_test_handler_2_py.coverage" NAME="pytest in test_handler_2.py Coverage Results" MODIFIED="1555340283587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/tests/unit" />
-    <SUITE FILE_PATH="coverage/backend$advancedSearch.coverage" NAME="advancedSearch Coverage Results" MODIFIED="1555365327365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backend$advancedSearch.coverage" NAME="advancedSearch Coverage Results" MODIFIED="1555380851848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$DBConnection.coverage" NAME="DBConnection Coverage Results" MODIFIED="1555269593968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
     <SUITE FILE_PATH="coverage/backend$DatabaseDAO__1_.coverage" NAME="DatabaseDAO (1) Coverage Results" MODIFIED="1555297476016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
-    <SUITE FILE_PATH="coverage/backend$DatabaseDAO.coverage" NAME="DatabaseDAO Coverage Results" MODIFIED="1555297498207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/advancedSearch" />
+    <SUITE FILE_PATH="coverage/backend$DatabaseDAO.coverage" NAME="DatabaseDAO Coverage Results" MODIFIED="1555433446340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/retrieveMovies" />
     <SUITE FILE_PATH="coverage/backend$pytest_for_test_handler_test_lambda_handler.coverage" NAME="pytest for test_handler.test_lambda_handler Coverage Results" MODIFIED="1555335956202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/tests/unit" />
     <SUITE FILE_PATH="coverage/backend$pytest_in_test_handler_py.coverage" NAME="pytest in test_handler.py Coverage Results" MODIFIED="1555341748675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller/tests/unit" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storeData/moviesData.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storeData/movieFragments/movieData5000.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/send.py">
+    <entry file="file://$PROJECT_DIR$/controller2/tests/unit/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/controller2/tests/unit/.pytest_cache/README.md" />
+    <entry file="file://$PROJECT_DIR$/controller2/retrieveMovies/DBConnection.py" />
+    <entry file="file://$PROJECT_DIR$/controller2/retrieveMovies/app.py" />
+    <entry file="file://$PROJECT_DIR$/controller2/advancedSearch/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/controller2/advancedSearch/requirements.txt" />
+    <entry file="file://$PROJECT_DIR$/controller2/retrieveMovies/requirements.txt" />
+    <entry file="file://$PROJECT_DIR$/controller/tests/unit/test_handler_2.py" />
+    <entry file="file://$PROJECT_DIR$/controller2/retrieveMovies/JSONEncoder.py" />
+    <entry file="file://$PROJECT_DIR$/controller2/tests/unit/test_handler.py" />
+    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/v/cache/nodeids" />
+    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/v/cache/stepwise" />
+    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/v/cache/lastfailed" />
+    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/README.md" />
+    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/CACHEDIR.TAG" />
+    <entry file="file://$PROJECT_DIR$/controller/.aws-sam/build/template.yaml" />
+    <entry file="file://$PROJECT_DIR$/controller/.aws-sam/build/AdvancedSearchFunction/dns/set.py" />
+    <entry file="file://$PROJECT_DIR$/controller/.aws-sam/build/AdvancedSearchFunction/dns/ttl.py" />
+    <entry file="file://$PROJECT_DIR$/controller/.aws-sam/build/AdvancedSearchFunction/dns/e164.py" />
+    <entry file="file://$PROJECT_DIR$/event.json" />
+    <entry file="file://$PROJECT_DIR$/controller2/template.yaml" />
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$PROJECT_DIR$/search_inverted.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storeData/sendToMongoReport.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storeData/splitData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storeData/operateRawDataSet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storeData/ImdbToMongodb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        <state relative-caret-position="169">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/advancedSearch/JSONEncoder.py" />
-    <entry file="file://$PROJECT_DIR$/.zshrc">
+    <entry file="file://$PROJECT_DIR$/controller2/advancedSearch/DatabaseDAO.py" />
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2260" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/const.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/send.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query2words.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rankWorker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="219" column="31" lean-forward="true" selection-start-line="219" selection-start-column="31" selection-end-line="219" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inverted_index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="66" column="51" selection-start-line="66" selection-start-column="51" selection-end-line="66" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller2/advancedSearch/rankWorker.py" />
+    <entry file="file://$PROJECT_DIR$/search_position.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/queryWorker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        <state relative-caret-position="319">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="e#36#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/advancedSearch/advancedSearch.py" />
+    <entry file="file://$PROJECT_DIR$/mongodbWorker.py" />
+    <entry file="file://$PROJECT_DIR$/PorterStemmer.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/positional_locate.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/positionFinal.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -464,254 +582,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymongo/topology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="198" selection-start-line="198" selection-end-line="198" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/advancedSearch/getMovie.py" />
-    <entry file="file://$PROJECT_DIR$/inverted_index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="66" column="51" lean-forward="true" selection-start-line="66" selection-start-column="51" selection-end-line="66" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/advancedSearch/DBConnection.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongodbWorker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.aws/credentials">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.aws/config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/advancedSearch/DatabaseDAO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="12" column="96" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="96" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/getMovie.py" />
-    <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/tests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/tests/unit/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/tests/unit/.pytest_cache/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/DBConnection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/app.py">
+    <entry file="file://$PROJECT_DIR$/controller2/advancedSearch/app.py" />
+    <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/DatabaseDAO.py" />
+    <entry file="file://$PROJECT_DIR$/AdvancedSearch/search.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/advancedSearch/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/advancedSearch/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/tests/unit/test_handler_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/retrieveMovies/JSONEncoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/advancedSearch/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/tests/unit/test_handler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/v/cache/nodeids">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/v/cache/stepwise">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/v/cache/lastfailed">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.pytest_cache/CACHEDIR.TAG">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.aws-sam/build/template.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.aws-sam/build/AdvancedSearchFunction/dns/set.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.aws-sam/build/AdvancedSearchFunction/dns/ttl.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/.aws-sam/build/AdvancedSearchFunction/dns/e164.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/template.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rankWorker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search_inverted.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="720">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/advancedSearch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storeData/ImdbToMongodb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storeData/sendToMongoReport.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storeData/splitData.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storeData/operateRawDataSet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storeData/data.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storeData/moviesData.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-3112743">
+          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
         </state>
       </provider>
     </entry>
