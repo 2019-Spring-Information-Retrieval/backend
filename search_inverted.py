@@ -46,10 +46,12 @@ class Search(Index):
         return results
 
 def main(args):
-    search = Search()
-    query = ['we']  # ["man","whale"]
-    results = search.search_inverted(query)
+    query = ["fashion","show"]
+    results = Search().search_inverted(query)
+    results1 = Search().search_script(query)
+
     print(results)
+    print(results1)
 
 
 if __name__ == "__main__":
