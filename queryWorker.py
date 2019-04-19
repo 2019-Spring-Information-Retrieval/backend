@@ -3,6 +3,8 @@ from typing import List, Dict
 from preprocess import Processor
 from search_inverted import Search
 from search_position import PSearch
+
+
 class QueryWorker(object):
     """docstring for QueryWorker
         USAGE:
@@ -31,22 +33,43 @@ class QueryWorker(object):
         """
         return PSearch().search_position(words)
 
-    def output(self, text:str)->Dict:
+    def titleFreqIndex(self, words: List[str])->Dict:
+        """
+            return the title index
+        """
+        return None
+
+    def titlePostIndex(self, words: List[str])->Dict:
+        """
+            return the title index
+        """
+        return None
+
+    def authorIndex(self, words: List[str])->Dict:
+        """
+            return the  index
+        """
+        return None
+
+    def output(self, text: str)->Dict:
         """
             return the doc ids for querying
         """
         index2docs = {}
         words = Processor().do(text)
-        #print(words)
+        # print(words)
         index2docs['freq-reverse'] = self.wordIndex(words)
         index2docs['positional'] = self.positionIndex(words)
+
+        #
+
         return words, index2docs
 
+
 def main():
-    query = 'the'
+    query = 'the' ########
     words, index2docs = QueryWorker().output(query)
-    #print(index2docs)
+    # print(index2docs)
 
 if __name__ == '__main__':
     main()
-
