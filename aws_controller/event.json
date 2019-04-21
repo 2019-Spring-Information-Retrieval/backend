@@ -1,5 +1,5 @@
 {
-  "body": "{\"type\": \"rateMovie\", \"rate\": \"0\", \"start\": \"0\", \"end\": \"10\", \"email\": \"liuweixi0819@gmail.com\", \"title\": \"The Mountain II\"}",
+  "body": "{\"type\": \"rateMovie\", \"rate\": \"0\", \"start\": \"0\", \"end\": \"10\", \"email\": \"liuweixi0819@gmail.com\", \"title\": \"Kate & Leopold\"}",
   "resource": "/{proxy+}",
   "path": "/path/to/resource",
   "httpMethod": "POST",
