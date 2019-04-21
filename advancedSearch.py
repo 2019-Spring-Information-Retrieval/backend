@@ -17,10 +17,7 @@ def advancedSearch(query: str):
 
     return docs
 
-
-
-
 #print(advancedSearch("the"))
 
-pprint.pprint(advancedSearch("spiderman"))
+pprint.pprint(advancedSearch("spiderman spider"))
 
