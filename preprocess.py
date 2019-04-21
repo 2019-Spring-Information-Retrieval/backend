@@ -60,21 +60,13 @@ class Processor(object):
         """
             return the word list
         """
-        #result = []
-
         if self.punct:
             text = replace_punct(text)
-        print(text)
-        #if self.misspell:
-        #    text = replace_typical_misspell(text)
+        
+        if self.misspell:
+            text = replace_typical_misspell(text)
+        
         return text.lower().split()
-        #result = TextBlob(text.lower()).words
-
-        #if self.lemmatize:
-        #    result = [Word(s).lemmatize() for s in result]
-
-        #return result
-
 
 def test():
     query = 'man, a'

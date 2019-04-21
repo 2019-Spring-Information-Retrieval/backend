@@ -4,6 +4,7 @@ import pytest
 
 from retrieveMovies import app as retrieveMovies
 from advancedSearch import app as advancedSearch
+from SetUpNewUser import lambda_function as setUpNewUser
 
 import pprint
 
@@ -69,11 +70,14 @@ def test_lambda_handler(apigw_event, mocker):
     # data = json.loads(ret["body"])
     # pprint.pprint(data)
 
-    ret = advancedSearch.lambda_handler(apigw_event, "")
-    data2 = json.loads(ret["body"])
-    pprint.pprint(data2)
+    # ret = advancedSearch.lambda_handler(apigw_event, "")
+    # data2 = json.loads(ret["body"])
+    # pprint.pprint(data2)
 
-    # print(data2)
+    ret = setUpNewUser.lambda_handler(apigw_event, "")
+    data3 = json.loads(ret["body"])
+    pprint.pprint(data3)
+
 
     # assert ret["statusCode"] == 200
     # assert "message" in ret["body"]
