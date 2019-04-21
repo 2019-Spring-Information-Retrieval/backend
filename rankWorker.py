@@ -1,13 +1,9 @@
 from typing import List, Dict
 from sklearn.feature_extraction.text import TfidfTransformer
-#from const import LIMIT_DOCS
 import numpy as np
 from collections import defaultdict
 from functools import reduce
 from pymongo import MongoClient
-
-#INDEX_IDS = ['freq-plot', 'post-plot', 'freq-script', 'post-script']
-
 
 np.set_printoptions(precision=5)
 
@@ -21,7 +17,6 @@ class RankWorker(object):
     """
 
     def __init__(self):
-        #self.mworker = mongodbworker
         self.index2docs = {}  # indextype : {word:{docid:freq}}
         self.doc2vecs = {}  # indextype : {doc: feature matrix}
         self.docs2score = {}
@@ -111,7 +106,7 @@ class RankWorker(object):
                     doc]] = self.index2docs[index][wd][doc]
         self.doc2vecs[index] = word_doc_post
 
-    def alignment(self, word_doc_post):
+    def alignment(self, word_doc_post)->Dict:
         # N = len(self.word_to_ix)  # word
         # M = len(self.doc_to_ix)  # doc
         def comb(place1, place2, coda=' '):
