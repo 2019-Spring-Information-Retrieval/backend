@@ -45,11 +45,31 @@ class Search(Index):
 
         return results
 
+    def search_title(self,query):
+        results = {}
+
+        client = pymongo.MongoClient("mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
+        db = client['IMDBData']
+        collection = db['Movies_6']
+
+        for word in query:
+            tokens = self.tokenize(word)
+            stems = self.stemming(tokens)
+
+            query = {stems[0]: {"$exists": True}}
+            cursor = collection.find(query,{"_id":0})
+
+            for i in cursor:
+                results.update(i)
+
+        return results
+
 def main(args):
-    query = ["fashion","show"]
+    query = ["summer"]
     results = Search().search_inverted(query)
     results1 = Search().search_script(query)
-
+    results2 = Search().search_title(query)
+    print(results2)
     print(results)
     print(results1)
 
