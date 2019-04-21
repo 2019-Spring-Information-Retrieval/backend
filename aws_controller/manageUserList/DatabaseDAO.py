@@ -33,6 +33,8 @@ class DatabaseDAO:
                 ]},
                 {"_id": 0, "ratedMovies": {"$elemMatch": {"title": title}}}
             ):
+                if item == {}:
+                    return None
                 return item['ratedMovies'][0]['rate']
         else:
             self.cacheDb['User'].update_one(
@@ -113,7 +115,7 @@ class DatabaseDAO:
 dao = DatabaseDAO()
 dao.connectToDatabase()
 
-# print(dao.rateMovie("liuweixi0819@gmail.com", "The Mountain II", "0"))
+print(dao.rateMovie("liuweixi0819@gmail.com", "The Mountai", "0"))
 # dao.removeFavorite("liuweixi0819@gmail.com", "Ljuset håller mig sällskap")
 # print(dao.whetherInList("liuweixi0819@gmail.com", "Don's Plum", "watchlist"))
 # dao.addToFavorite("qwe")
