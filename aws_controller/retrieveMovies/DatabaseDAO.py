@@ -22,58 +22,22 @@ class DatabaseDAO:
             return bson.json_util.dumps(self.cacheDb['Movies'].find({'Title': {"$regex": '^' + query, '$options':'i' }}))
         return bson.json_util.dumps(self.cacheDb['Movies'].find({'Title': {"$regex": '^' + query, '$options':'i'}}).limit(int(number)))
 
+    def countAll(self, genre):
+        return self.cacheDb['Movies'].count_documents({'Genre': {"$regex": ".*" + genre + ".*"}})
+
+
     def getMovieFromTo(self, genre, start, end):
         return bson.json_util.dumps(self.cacheDb['Movies'].find({'Genre': {"$regex": ".*" + genre + ".*"}}).skip(int(start)).limit(int(end)))
 
     def getTopRated(self, num, minVote):
         return bson.json_util.dumps(self.cacheDb['Movies'].find({"imdbRating": {"$lt": 10.1}, "imdbVotes": {"$gt": int(minVote)}}).sort([("imdbRating", -1), ("imdbVotes", -1)]).limit(int(num)))
 
-    def countAll(self, genre):
-        return self.cacheDb['Movies'].count_documents({'Genre': {"$regex": ".*" + genre + ".*"}})
 
-    def convert(self):
-        doc = self.cacheDb['Movies'].find().limit(64960)
-        count = 1
-        countError = 0
-        for item in doc:
-            try:
-                item['imdbRating']
-            except KeyError:
-                countError = countError + 1
-                continue
-
-
-            if (item['imdbRating'] == "N/A"):
-                countError = countError + 1
-                continue
-
-            try:
-                vote = item["imdbVotes"].replace(",", "")
-            except:
-                countError = countError + 1
-                continue
-            if (item['imdbVotes'] == "N/A"):
-                countError = countError + 1
-                continue
-
-            print(count)
-            count = count + 1
-            print((item['_id']))
-            print((item['Title']))
-            print("------------")
-            self.cacheDb['Movies'].update_one({"_id": item["_id"]},
-                                              {"$set":
-                                                   {"imdbRating": float(item['imdbRating']),
-                                                    "imdbVotes": int(vote)}},
-                                              upsert = False)
-    def check(self):
-        return self.cacheDb['Movies'].find({"_id": ObjectId("5c97cf1112c54d2abe3dca49")})
-        # return self.cacheDb['Movies'].find({"_id": { "$lt" : ObjectId("5c97fac912c54d2e52ab7f37")}}).count()
 
 dao = DatabaseDAO()
-
-
 # dao.connectToDatabase()
+
+# pprint.pprint(dao.getWatchlist("liuweixi0819@gmail.com",1,1))
 
 
 # dao.convert()
@@ -127,3 +91,46 @@ dao = DatabaseDAO()
 # 5c982a3b12c54d2e52ad597a
 # Tropykaos
 # ------------
+
+
+#
+#
+# def convert(self):
+#     doc = self.cacheDb['Movies'].find().limit(64960)
+#     count = 1
+#     countError = 0
+#     for item in doc:
+#         try:
+#             item['imdbRating']
+#         except KeyError:
+#             countError = countError + 1
+#             continue
+#
+#         if (item['imdbRating'] == "N/A"):
+#             countError = countError + 1
+#             continue
+#
+#         try:
+#             vote = item["imdbVotes"].replace(",", "")
+#         except:
+#             countError = countError + 1
+#             continue
+#         if (item['imdbVotes'] == "N/A"):
+#             countError = countError + 1
+#             continue
+#
+#         print(count)
+#         count = count + 1
+#         print((item['_id']))
+#         print((item['Title']))
+#         print("------------")
+#         self.cacheDb['Movies'].update_one({"_id": item["_id"]},
+#                                           {"$set":
+#                                                {"imdbRating": float(item['imdbRating']),
+#                                                 "imdbVotes": int(vote)}},
+#                                           upsert=False)
+#
+#
+# def check(self):
+#     return self.cacheDb['Movies'].find({"_id": ObjectId("5c97cf1112c54d2abe3dca49")})
+#     # return self.cacheDb['Movies'].find({"_id": { "$lt" : ObjectId("5c97fac912c54d2e52ab7f37")}}).count()

@@ -2,7 +2,7 @@ import json
 from DatabaseDAO import DatabaseDAO, dao
 from JSONEncoder import JSONEncoder
 
-count = -1
+# count = -1
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
@@ -37,8 +37,9 @@ def lambda_handler(event, context):
     # context["callbackWaitsForEmptyEventLoop"] = "false"
 
     global dao
-    global count
-    count = count + 1
+    # global count
+    # count = count + 1
+    count = -1
 
     parameters = event["queryStringParameters"]
     dao.connectToDatabase()
@@ -68,10 +69,7 @@ def lambda_handler(event, context):
                     "Access-Control-Allow-Credentials": "true"
                     },
         "body": json.dumps({
-            # "message": "hello world",
             "movie": movie,
-            # "event": parameters["type"],
-            "count": count
-            # "location": ip.text.replace("\n", "")
+            "count": count,
         }),
     }

@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63d6724f-51fb-44cb-86d2-1d956c816f5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/aws_controller/SetUpNewUser/DBConnection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/SetUpNewUser/DatabaseDAO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/SetUpNewUser/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/SetUpNewUser/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/manageUserList/DBConnection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/manageUserList/DatabaseDAO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/manageUserList/JSONEncoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/manageUserList/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/manageUserList/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_controller/manageUserList/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_controller/event.json" beforeDir="false" afterPath="$PROJECT_DIR$/aws_controller/event.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_controller/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/aws_controller/template.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_controller/tests/unit/test_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/aws_controller/tests/unit/test_handler.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,24 +53,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/storeData/ImdbToMongodb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-241">
+            <state>
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/positionalScript_original.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
-              <folding>
-                <element signature="e#19#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -177,6 +178,11 @@
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="storeData" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -387,7 +393,7 @@
       <workItem from="1555611815036" duration="9000" />
       <workItem from="1555611851565" duration="2290000" />
       <workItem from="1555614530816" duration="1827000" />
-      <workItem from="1555616369768" duration="5211000" />
+      <workItem from="1555616369768" duration="6678000" />
     </task>
     <servers />
   </component>
@@ -424,7 +430,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148811000" />
+    <option name="totallyTimeSpent" value="150278000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -439,12 +445,12 @@
     <frame x="490" y="33" width="1350" height="881" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68339306" visible="true" weight="0.19266056" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.68339306" visible="true" weight="0.19266056" />
       <window_info id="Structure" order="1" sideWeight="0.50094515" side_tool="true" weight="0.24969475" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899868" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6236099" visible="true" weight="0.32953104" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6236099" weight="0.32953104" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4226268" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -750,15 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storeData/ImdbToMongodb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-241">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python/lib/python3.7/site-packages/bson/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -792,10 +789,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/positionalScript_original.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+        <state relative-caret-position="250">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding>
             <element signature="e#19#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storeData/ImdbToMongodb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

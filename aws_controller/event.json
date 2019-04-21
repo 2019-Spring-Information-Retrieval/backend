@@ -1,13 +1,14 @@
 {
-  "body": "{\"text\": \"Spider man\"}",
+  "body": "{\"type\": \"rateMovie\", \"rate\": \"0\", \"start\": \"0\", \"end\": \"10\", \"email\": \"liuweixi0819@gmail.com\", \"title\": \"The Mountain II\"}",
   "resource": "/{proxy+}",
   "path": "/path/to/resource",
   "httpMethod": "POST",
   "isBase64Encoded": false,
   "queryStringParameters": {
-    "num": "2",
-    "type": "topRated",
-    "minVote": 1000
+    "email": "liuweixi0819@gmail.com",
+    "type": "watchlist",
+    "start": 1,
+    "end": 3
   },
   "pathParameters": {
     "proxy": "/path/to/resource"
