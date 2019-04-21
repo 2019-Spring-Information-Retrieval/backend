@@ -35,7 +35,7 @@ class DatabaseDAO:
 
 
 dao = DatabaseDAO()
-# dao.connectToDatabase()
+dao.connectToDatabase()
 
 # pprint.pprint(dao.getWatchlist("liuweixi0819@gmail.com",1,1))
 
@@ -43,7 +43,7 @@ dao = DatabaseDAO()
 # dao.convert()
 # pprint.pprint(bson.json_util.dumps(dao.check()))
 
-# print(dao.getOneMovie("Albela"))
+print(dao.getOneMovie("How to Train Your Dragon"))
 # print(dao.getMovieFromTo(1,5))
 # pprint.pprint(dao.getMovieFromTo("Drama",1,5))
 

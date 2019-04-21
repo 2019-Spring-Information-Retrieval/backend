@@ -20,7 +20,7 @@ class ImdbToMongoDB:
     def sendToMongoDB(self):
         db = self.client['IMDBData']
         collection = db['Movies']
-        movie = self.imdbAPI("tt0892769")
+        movie = self.imdbAPI("tt1431045")
         collection.insert_one(movie)
 
         # for i in range(35000, 207581, 5000):
@@ -42,5 +42,5 @@ class ImdbToMongoDB:
         #     collection.insert_many(movies)
 
 
-# test = ImdbToMongoDB()
+# test = ImdbToMongoDB("fe53f97e")
 # test.sendToMongoDB()
