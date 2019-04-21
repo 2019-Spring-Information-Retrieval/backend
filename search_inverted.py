@@ -70,8 +70,8 @@ def main(args):
     results1 = Search().search_script(query)
     results2 = Search().search_title(query)
     print(results2)
-    # print(results)
-    # print(results1)
+    print(results)
+    print(results1)
 
 
 if __name__ == "__main__":
