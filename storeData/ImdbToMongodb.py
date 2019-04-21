@@ -20,25 +20,27 @@ class ImdbToMongoDB:
     def sendToMongoDB(self):
         db = self.client['IMDBData']
         collection = db['Movies']
+        movie = self.imdbAPI("tt0892769")
+        collection.insert_one(movie)
 
-        for i in range(35000, 207581, 5000):
-            print("------------------------------------")
-            print("I am sending the movieData" + str(i) + ".csv file")
-            movieIDList = self.readMovieFile(i)
-            count = 0
-            movies = []
-            for id in movieIDList:
-                try:
-                    movie = self.imdbAPI(id)
-                    movies.append(movie)
-                    if count % 1000 == 0:
-                        print(count)
-                    count = count + 1
-                except:
-                    print("This id:" + id + " results problem.")
+        # for i in range(35000, 207581, 5000):
+        #     print("------------------------------------")
+        #     print("I am sending the movieData" + str(i) + ".csv file")
+        #     movieIDList = self.readMovieFile(i)
+        #     count = 0
+        #     movies = []
+        #     for id in movieIDList:
+        #         try:
+        #             movie = self.imdbAPI(id)
+        #             movies.append(movie)
+        #             if count % 1000 == 0:
+        #                 print(count)
+        #             count = count + 1
+        #         except:
+        #             print("This id:" + id + " results problem.")
+        #
+        #     collection.insert_many(movies)
 
-            collection.insert_many(movies)
 
-
-# test = ImdbToMongoDB(key)
+# test = ImdbToMongoDB()
 # test.sendToMongoDB()
