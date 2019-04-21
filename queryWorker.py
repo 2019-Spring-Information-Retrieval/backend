@@ -25,25 +25,13 @@ class QueryWorker(object):
         """
             using inverted file index of each word
         """
-        return Search()  # .search_inverted(words)
+        return Search()
 
     def positionIndex(self)->Dict:
         """
             using inverted zone index of each word
         """
-        return PSearch()  # .search_position(words)
-
-    def titleFreqIndex(self, words: List[str])->Dict:
-        """
-            return the title index
-        """
-        return None
-
-    def titlePostIndex(self, words: List[str])->Dict:
-        """
-            return the title index
-        """
-        return None
+        return PSearch()
 
     def authorIndex(self, words: List[str])->Dict:
         """
@@ -57,10 +45,11 @@ class QueryWorker(object):
         """
         index2docs = {}
         words = Processor().do(text)
-        # print(words)
+        
         wordidx = self.wordIndex()
         index2docs['freq-script'] = wordidx.search_script(words)
         index2docs['freq-plot'] = wordidx.search_inverted(words)
+        index2docs['freq-title'] = wordidx.search_title(words)
         if len(words) > 1:
             postidx = self.positionIndex()
             index2docs['post-plot'] = postidx.search_position(words)

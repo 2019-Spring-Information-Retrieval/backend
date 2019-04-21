@@ -25,7 +25,8 @@ class Search(Index):
                 results.update(i)
 
         return results
-    def search_script(self,query):
+
+    def search_script(self, query):
         results = {}
 
         client = pymongo.MongoClient(
@@ -38,17 +39,18 @@ class Search(Index):
             stems = self.stemming(tokens)
 
             query = {stems[0]: {"$exists": True}}
-            cursor = collection.find(query,{"_id":0})
+            cursor = collection.find(query, {"_id": 0})
 
             for i in cursor:
                 results.update(i)
 
         return results
 
-    def search_title(self,query):
+    def search_title(self, query):
         results = {}
 
-        client = pymongo.MongoClient("mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
+        client = pymongo.MongoClient(
+            "mongodb+srv://jack:jackmongodb@cluster0-uagde.mongodb.net")
         db = client['IMDBData']
         collection = db['Movies_6']
 
@@ -57,12 +59,13 @@ class Search(Index):
             stems = self.stemming(tokens)
 
             query = {stems[0]: {"$exists": True}}
-            cursor = collection.find(query,{"_id":0})
+            cursor = collection.find(query, {"_id": 0})
 
             for i in cursor:
                 results.update(i)
 
         return results
+
 
 def main(args):
     query = ["summer"]
