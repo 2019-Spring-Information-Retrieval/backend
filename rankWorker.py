@@ -9,7 +9,16 @@ np.set_printoptions(precision=5)
 
 
 def getFinalScore(scores: List[float], names: List[str]=None):
-    return sum(scores)
+    weights = {'freq-plot': 0.79, 'freq-script': 0.63,
+               'freq-title': 0.88, 'post-script': 0.63, 'post-plot': 0.51}
+
+    cur_weight = [weights[n] for n in names]
+    new_weight = [w / sum(cur_weight) for w in cur_weight]
+
+    results = 0
+    for ix, score in enumerate(scores):
+        results += new_weight[ix] * score
+    return results
 
 
 class RankWorker(object):
@@ -173,29 +182,36 @@ class RankWorker(object):
         """
         # 文档-分数 字典
         self.docs2score = defaultdict(list)
+        index_names = []
 
         if len(self.qwords) > 1:
             if 'freq-plot' in self.index_ids:
                 self.invertRanking('freq-plot')
+                index_names.append('freq-plot')
             if 'freq-script' in self.index_ids:
                 self.invertRanking('freq-script')
+                index_names.append('freq-script')
             if 'post-plot' in self.index_ids:
                 self.positionRanking('post-plot')
+                index_names.append('post-plot')
             if 'post-plot' in self.index_ids:
                 self.positionRanking('post-script')
+                index_names.append('post-script')
 
         else:
             if 'freq-plot' in self.index_ids:
                 self.freqRanking('freq-plot')
+                index_names.append('freq-plot')
             if 'freq-script' in self.index_ids:
                 self.freqRanking('freq-script')
+                index_names.append('freq-script')
 
         # 2. 合计总分
         scoring = []
         ranking = []
         for doc, scores in self.docs2score.items():
             ranking.append(doc)
-            scoring.append(getFinalScore(scores))
+            scoring.append(getFinalScore(scores, index_names))
 
         # 3. 根据总分排序
         inds = np.argsort(scoring)
