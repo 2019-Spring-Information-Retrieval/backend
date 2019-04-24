@@ -17,7 +17,7 @@ def search(query: str):
     return docs
 
 
-print(search("the"))
+# print(search("a retired spy decided to back to save his daughter life. his daughter got caught by gang"))
 
 # pprint.pprint(search("the"))
 

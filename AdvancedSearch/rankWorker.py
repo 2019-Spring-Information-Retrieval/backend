@@ -38,9 +38,12 @@ class RankWorker(object):
 
         '''
         self.index2docs = index2docs
-        self.qwords = qwords
+        # self.qwords = qwords
         self.word_to_ix = {}
-        for w in self.qwords:
+        # for w in self.qwords:
+
+        for w in self.index2docs['freq-reverse'].keys():
+            self.qwords.append(w)
             if w not in self.word_to_ix:
                 self.word_to_ix[w] = len(self.word_to_ix)
 
@@ -80,6 +83,9 @@ class RankWorker(object):
                         for _ in range(len(self.doc_to_ix))]
         for wd, docDict in self.index2docs['freq-reverse'].items():
             for did, freq in docDict.items():
+                # print(self.word_to_ix)
+                # print(wd)
+                # print("----------")
                 x = self.doc_to_ix[did]
                 y = self.word_to_ix[wd]
                 doc2wordfreq[x][y] = freq
