@@ -1,23 +1,14 @@
 # SayYourMoive
-
+Demo Link: https://2019-spring-information-retrieval.github.io/Movie-Website/
 
 
 > **Content**
-> 1. Introduce
-> 
->
-> 
+> 1. Introduction
 > 0. Ranking
 
 
-## Introduce
-
-
-## 
-
-## 
-
-##
+## Introduction
+Our project is to build a movie website that provides basic information of movies including movie name, movie synopsis, movie trailer and movie poster, and two searching engines. The first searching engine is used for searching movie by exactly or fuzzy movie name. The second searching engine is an advanced one. Supposed there is a fragment of a movie coming out from your head, but you don’t know what exactly name it is. In this situation, our second advanced searching engine could help you to find what you want. You only need type the scenario showed up in your head, translate it to words, we can base on your input to find the most likely movie. Furthermore, for the two searching engines, we will rank all the possible results to users as well.
 
 
 ## Ranking
